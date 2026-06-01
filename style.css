@@ -22,8 +22,14 @@ body {
    ========================================================================== */
 header {
     padding: 22px 0;
-    position: relative;
-    background: #ffffff;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(255, 255, 255, 0.55);
+    backdrop-filter: blur(24px) saturate(180%);
+    -webkit-backdrop-filter: blur(24px) saturate(180%);
+    border-bottom: 1px solid rgba(60, 232, 215, 0.2);
+    box-shadow: 0 4px 24px rgba(0, 187, 170, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.8);
 }
 
 header nav {
@@ -118,10 +124,56 @@ h1, .pixel-title {
 .salles-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
-    max-width: 800px;
-    margin: 40px auto;
+    gap: 24px;
+    max-width: 860px;
+    margin: 0 auto 80px auto;
     padding: 0 20px;
+}
+
+.salle-card {
+    background-color: var(--cyan-medium);
+    border-radius: 18px;
+    padding: 56px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.salle-card h2 {
+    color: #ffffff;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.salle-card p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 14px;
+    margin: 0;
+}
+
+.btn-salle {
+    display: inline-block;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: all 0.25s ease;
+}
+
+.btn-salle:hover {
+    background-color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .salles-grid { grid-template-columns: 1fr; }
 }
 
 .works-list {
@@ -169,30 +221,35 @@ h1, .pixel-title {
 }
 
 .form-section-linear {
-    background-color: rgba(255, 255, 255, 0.7);
-    padding: 40px;
+    background-color: var(--bg-light);
+    padding: 36px 40px;
     border-radius: 14px;
-    margin-bottom: 40px;
-    border: 1px solid rgba(60, 232, 215, 0.25);
-    box-shadow: 0 4px 15px rgba(0, 187, 170, 0.03);
+    margin-bottom: 20px;
+    border: none;
+    box-shadow: none;
 }
 
 .form-section-linear h3 {
     display: flex;
     align-items: center;
-    color: var(--cyan-dark);
-    font-size: 22px;
+    color: var(--text-dark);
+    font-size: 20px;
+    font-weight: 700;
     margin-top: 0;
-    margin-bottom: 25px;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid rgba(60, 232, 215, 0.6);
 }
 
 .section-icon {
-    background-color: var(--cyan-medium);
+    background-color: var(--cyan-dark);
     color: #ffffff;
-    font-size: 12px;
-    padding: 8px 10px;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 11px;
     border-radius: 6px;
     margin-right: 12px;
+    letter-spacing: 0.5px;
 }
 
 /* Groupes de champs textuels */
@@ -211,19 +268,19 @@ h1, .pixel-title {
 .input-group input[type="email"],
 .input-group input[type="number"] {
     width: 100%;
-    padding: 16px;
-    border: 2px solid var(--bg-light);
+    padding: 14px 16px;
+    border: 2px solid rgba(0, 187, 170, 0.25);
     border-radius: 8px;
     background-color: #ffffff;
     font-size: 16px;
     box-sizing: border-box;
-    transition: all 0.3s ease;
+    transition: all 0.25s ease;
 }
 
 .input-group input:focus {
     outline: none;
     border-color: var(--cyan-dark);
-    box-shadow: 0 0 0 4px rgba(0, 187, 170, 0.15);
+    box-shadow: 0 0 0 3px rgba(0, 187, 170, 0.12);
 }
 
 /* Boutons Radios horizontaux (Profils) */
@@ -254,7 +311,7 @@ h1, .pixel-title {
     top: -2px; left: 0;
     height: 22px; width: 22px;
     background-color: #ffffff;
-    border: 2px solid var(--cyan-medium);
+    border: 2px solid var(--cyan-dark);
     border-radius: 50%;
     transition: all 0.2s;
 }
@@ -299,7 +356,7 @@ h1, .pixel-title {
     top: 2px; left: 0;
     height: 22px; width: 22px;
     background-color: #ffffff;
-    border: 2px solid var(--cyan-medium);
+    border: 2px solid var(--cyan-dark);
     border-radius: 4px;
 }
 
@@ -334,15 +391,15 @@ h1, .pixel-title {
 
 .salle-accordion {
     background-color: #ffffff;
-    border: 2px solid var(--bg-light);
+    border: 2px solid rgba(0, 187, 170, 0.2);
     border-radius: 12px;
     overflow: hidden;
     transition: all 0.3s ease;
 }
 
 .salle-accordion[open] {
-    border-color: var(--cyan-medium);
-    box-shadow: 0 5px 15px rgba(0, 187, 170, 0.05);
+    border-color: var(--cyan-dark);
+    box-shadow: 0 4px 16px rgba(0, 187, 170, 0.12);
 }
 
 .salle-summary {
@@ -385,8 +442,8 @@ h1, .pixel-title {
 
 .horaires-dropdown-content {
     padding: 25px;
-    background-color: #fafafa;
-    border-top: 1px solid #eee;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-top: 1px solid rgba(0, 187, 170, 0.15);
 }
 
 /* ==========================================================================
@@ -423,20 +480,20 @@ h1, .pixel-title {
 
 .jour-toggle-btn span {
     display: inline-block;
-    padding: 10px 20px;
-    border: 2px solid var(--bg-light);
+    padding: 10px 22px;
+    border: 2px solid rgba(0, 187, 170, 0.3);
     border-radius: 25px;
     font-size: 14px;
     font-weight: 600;
-    color: #555;
-    background: #fff;
+    color: #444;
+    background: #ffffff;
     transition: all 0.2s ease;
     user-select: none;
     cursor: pointer;
 }
 
 .jour-toggle-btn:hover span {
-    border-color: var(--cyan-medium);
+    border-color: var(--cyan-dark);
     color: var(--cyan-dark);
 }
 
@@ -489,7 +546,7 @@ h1, .pixel-title {
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    border: 2px solid #eee;
+    border: 2px solid rgba(0, 187, 170, 0.2);
     padding: 12px;
     border-radius: 8px;
     text-align: center;
@@ -510,7 +567,8 @@ h1, .pixel-title {
 
 /* Hover sur badge disponible */
 .horaire-badge-item:not(.is-disabled):hover .badge-content {
-    border-color: var(--cyan-medium);
+    border-color: var(--cyan-dark);
+    background-color: rgba(0, 187, 170, 0.04);
     cursor: pointer;
 }
 
@@ -539,8 +597,8 @@ h1, .pixel-title {
 
 /* Zone nombre de personnes (apparaît après sélection d'un créneau) */
 .nb-personnes-zone {
-    padding-top: 10px;
-    border-top: 1px solid #eee;
+    padding-top: 16px;
+    border-top: 1px solid rgba(0, 187, 170, 0.15);
 }
 
 .jauge-info-txt {
@@ -569,21 +627,22 @@ h1, .pixel-title {
 }
 
 .btn-submit-large {
-    background-color: var(--cyan-medium);
+    background-color: var(--cyan-dark);
     color: #ffffff;
-    border: none;
-    padding: 18px 60px;
-    border-radius: 35px;
-    font-size: 18px;
+    border: 2px solid var(--cyan-dark);
+    padding: 16px 56px;
+    border-radius: 30px;
+    font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 5px 20px rgba(60, 232, 215, 0.4);
+    transition: all 0.25s ease;
+    box-shadow: none;
 }
 
 .btn-submit-large:hover {
-    background-color: var(--cyan-dark);
-    transform: translateY(-3px);
+    background-color: transparent;
+    color: var(--cyan-dark);
+    transform: translateY(-2px);
 }
 
 
@@ -1012,6 +1071,117 @@ h1, .pixel-title {
 .cta-section .btn-hero:hover {
     background-color: transparent;
     color: #ffffff;
+}
+
+/* ==========================================================================
+   PAGE CONTACT — LAYOUT 2 COLONNES
+   ========================================================================== */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 24px;
+    max-width: 850px;
+    margin: 0 auto 0 auto;
+    align-items: start;
+}
+
+.contact-info {
+    position: sticky;
+    top: 84px;
+    align-self: start;
+}
+
+.contact-info-block {
+    background-color: var(--bg-light);
+    border-radius: 14px;
+    padding: 32px 28px;
+}
+
+.contact-info-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--cyan-dark);
+    margin: 0 0 16px;
+}
+
+.contact-address {
+    font-style: normal;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 12px;
+}
+
+.contact-name {
+    font-size: 15px;
+    color: #333;
+    margin: 0 0 20px;
+}
+
+.contact-divider {
+    width: 36px;
+    height: 2px;
+    background-color: var(--cyan-medium);
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.contact-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cyan-dark);
+    margin: 0 0 6px;
+}
+
+.contact-phone {
+    font-size: 15px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.contact-phone:hover {
+    color: var(--cyan-dark);
+    border-color: var(--cyan-dark);
+}
+
+.contact-form-wrapper {
+    min-width: 0;
+}
+
+.input-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid rgba(0, 187, 170, 0.25);
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+    resize: vertical;
+    transition: all 0.25s ease;
+}
+
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--cyan-dark);
+    box-shadow: 0 0 0 3px rgba(0, 187, 170, 0.12);
+}
+
+@media (max-width: 700px) {
+    .contact-layout {
+        grid-template-columns: 1fr;
+    }
+    .contact-info {
+        position: static;
+    }
 }
 
 /* ==========================================================================
