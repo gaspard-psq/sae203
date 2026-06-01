@@ -32,13 +32,6 @@
     </div>
 </div>
 
-<div class="salle-carousel-bg">
-    <p>Carousel avec une image de chaque salle en fond</p>
-</div>
-<div class="salle-nav-bar">
-    <a href="salle1.php" class="salle-nav-arrow">&#8249;</a>
-    <a href="salle3.php" class="btn-salle-nav">Découvrir la salle 3</a>
-    <a href="salle3.php" class="salle-nav-arrow">&#8250;</a>
-</div>
+<?php include('carousel_salles.php'); ?>
 
 <?php include('footer.php'); ?>
