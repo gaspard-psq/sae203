@@ -12,9 +12,9 @@
                     <div class="slide-bg slide-bg-1">
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
-                            <span class="slide-num">01</span>
-                            <h3>Salle 002</h3>
-                            <p>Exposition principale E-llusion</p>
+                            <span class="slide-num">Salle 021</span>
+                            <h3>Salle n°1</h3>
+                            <p>Societ-e</p>
                             <a href="salle1.php" class="btn-slide">Découvrir</a>
                         </div>
                     </div>
@@ -24,8 +24,8 @@
                     <div class="slide-bg slide-bg-2">
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
-                            <span class="slide-num">02</span>
-                            <h3>Salle 001</h3>
+                            <span class="slide-num">Salle 005</span>
+                            <h3>Salle n°2</h3>
                             <p>Atelier interactif</p>
                             <a href="salle2.php" class="btn-slide">Découvrir</a>
                         </div>
@@ -36,8 +36,8 @@
                     <div class="slide-bg slide-bg-3">
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
-                            <span class="slide-num">03</span>
-                            <h3>Salle 005</h3>
+                            <span class="slide-num">Salle 002</span>
+                            <h3>Salle n°3</h3>
                             <p>Zone VR</p>
                             <a href="salle3.php" class="btn-slide">Découvrir</a>
                         </div>
@@ -48,8 +48,8 @@
                     <div class="slide-bg slide-bg-4">
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
-                            <span class="slide-num">04</span>
-                            <h3>Salle 021</h3>
+                            <span class="slide-num">Salle 001</span>
+                            <h3>Salle n°4</h3>
                             <p>Projection</p>
                             <a href="salle4.php" class="btn-slide">Découvrir</a>
                         </div>
