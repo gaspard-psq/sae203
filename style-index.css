@@ -1,0 +1,120 @@
+/* ==========================================================================
+   PAGE ACCUEIL — HERO
+   ========================================================================== */
+.hero {
+    position: relative;
+    background-color: var(--bg-light);
+    padding: 80px 20px 70px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.hero-pattern { display: none; }
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-content .pixel-title {
+    font-size: 64px;
+    margin: 0 0 20px;
+    line-height: 1.1;
+}
+
+.hero-sub {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0 0 35px;
+    color: #1a1a1a;
+}
+
+/* ==========================================================================
+   PAGE ACCUEIL — CHIFFRES CLÉS
+   ========================================================================== */
+.chiffres-section {
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 50px 20px;
+}
+
+.chiffre-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.chiffre-nb {
+    font-family: 'CutePixel', 'Courier New', monospace;
+    font-size: 48px;
+    color: var(--cyan-dark);
+    line-height: 1;
+}
+
+.chiffre-label {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555;
+    margin-top: 6px;
+}
+
+.chiffre-sep {
+    width: 1px;
+    height: 50px;
+    background-color: rgba(0,187,170,0.3);
+}
+
+/* ==========================================================================
+   PAGE ACCUEIL — CTA FINAL
+   ========================================================================== */
+.cta-section {
+    background-color: var(--cyan-dark);
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.cta-inner {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.cta-inner h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 14px;
+}
+
+.cta-inner p {
+    color: rgba(255,255,255,0.85);
+    font-size: 16px;
+    margin: 0 0 30px;
+    line-height: 1.6;
+}
+
+.cta-section .btn-hero {
+    background-color: #ffffff;
+    color: var(--cyan-dark);
+    border-color: #ffffff;
+}
+
+.cta-section .btn-hero:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+@media (max-width: 600px) {
+    .hero-content .pixel-title { font-size: 40px; }
+    .chiffre-item { padding: 0 20px; }
+    .chiffre-sep { display: none; }
+    .chiffres-section { gap: 30px; }
+}

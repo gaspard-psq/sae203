@@ -1,0 +1,180 @@
+/* ==========================================================================
+   PAGE CONTACT — LAYOUT 2 COLONNES
+   ========================================================================== */
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 260px;
+    gap: 24px;
+    max-width: 850px;
+    margin: 0 auto 0 auto;
+    align-items: start;
+}
+
+.contact-info {
+    position: sticky;
+    top: 84px;
+    align-self: start;
+}
+
+.contact-info-block {
+    background-color: var(--bg-light);
+    border-radius: 14px;
+    padding: 32px 28px;
+}
+
+.contact-info-title {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--cyan-dark);
+    margin: 0 0 16px;
+}
+
+.contact-address {
+    font-style: normal;
+    font-size: 15px;
+    line-height: 1.7;
+    color: #333;
+    margin: 0 0 12px;
+}
+
+.contact-name { font-size: 15px; color: #333; margin: 0 0 20px; }
+
+.contact-divider {
+    width: 36px;
+    height: 2px;
+    background-color: var(--cyan-medium);
+    border-radius: 2px;
+    margin-bottom: 20px;
+}
+
+.contact-label {
+    font-size: 13px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--cyan-dark);
+    margin: 0 0 6px;
+}
+
+.contact-phone {
+    font-size: 15px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(0,0,0,0.15);
+    padding-bottom: 2px;
+    transition: color 0.2s, border-color 0.2s;
+}
+
+.contact-phone:hover {
+    color: var(--cyan-dark);
+    border-color: var(--cyan-dark);
+}
+
+.contact-form-wrapper { min-width: 0; }
+
+/* ==========================================================================
+   CHAMPS — TEXTAREA
+   ========================================================================== */
+.input-group { margin-bottom: 25px; }
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #222222;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="tel"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid rgba(0, 187, 170, 0.25);
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.25s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--cyan-dark);
+    box-shadow: 0 0 0 3px rgba(0, 187, 170, 0.12);
+}
+
+.input-group textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid rgba(0, 187, 170, 0.25);
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+    resize: vertical;
+    transition: all 0.25s ease;
+}
+
+.input-group textarea:focus {
+    outline: none;
+    border-color: var(--cyan-dark);
+    box-shadow: 0 0 0 3px rgba(0, 187, 170, 0.12);
+}
+
+.form-section-linear {
+    background-color: var(--bg-light);
+    padding: 36px 40px;
+    border-radius: 14px;
+    margin-bottom: 20px;
+}
+
+.form-section-linear h3 {
+    display: flex;
+    align-items: center;
+    color: var(--text-dark);
+    font-size: 20px;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 28px;
+    padding-bottom: 14px;
+    border-bottom: 2px solid rgba(60, 232, 215, 0.6);
+}
+
+.section-icon {
+    background-color: var(--cyan-dark);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 11px;
+    border-radius: 6px;
+    margin-right: 12px;
+}
+
+.form-footer-linear { text-align: center; padding-top: 20px; }
+
+.btn-submit-large {
+    background-color: var(--cyan-dark);
+    color: #ffffff;
+    border: 2px solid var(--cyan-dark);
+    padding: 16px 56px;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.25s ease;
+}
+
+.btn-submit-large:hover {
+    background-color: transparent;
+    color: var(--cyan-dark);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 700px) {
+    .contact-layout { grid-template-columns: 1fr; }
+    .contact-info { position: static; }
+}

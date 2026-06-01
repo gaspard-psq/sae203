@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php $page_styles = ['style-index.css', 'style-carousel.css']; include('header.php'); ?>
 
 <!-- HERO -->
 <section class="hero">

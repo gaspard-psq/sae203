@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php $page_styles = ['style-exposition.css']; include('header.php'); ?>
 
 <div class="container">
     <section class="intro-section">

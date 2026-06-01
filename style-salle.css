@@ -1,0 +1,45 @@
+/* ==========================================================================
+   PAGES SALLE — LISTE DES ŒUVRES
+   ========================================================================== */
+.works-list {
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.work-item {
+    display: flex;
+    align-items: center;
+    gap: 60px;
+    margin-bottom: 0;
+    padding: 50px 80px;
+}
+
+.work-item:nth-child(odd) {
+    background-color: var(--bg-light);
+    flex-direction: row;
+}
+
+.work-item:nth-child(even) {
+    background-color: var(--cyan-medium);
+    color: var(--text-dark);
+    flex-direction: row-reverse;
+}
+
+.work-img-placeholder {
+    background-color: #ffffff;
+    min-width: 200px;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-weight: bold;
+    border-radius: 8px;
+}
+
+@media (max-width: 600px) {
+    .work-item { flex-direction: column !important; padding: 30px 20px; gap: 20px; }
+    .work-img-placeholder { width: 100%; min-width: unset; height: 160px; }
+}

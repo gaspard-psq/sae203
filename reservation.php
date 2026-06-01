@@ -53,7 +53,8 @@ foreach ($tous_creneaux as $c) {
 
 $jauge_json = json_encode($jauge_index);
 
-include('header.php'); 
+$page_styles = ['style-reservation.css'];
+include('header.php');
 ?>
 
 <div class="container">

@@ -1,0 +1,58 @@
+/* ==========================================================================
+   PAGE EXPOSITION — GRILLE DES SALLES
+   ========================================================================== */
+.salles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+    max-width: 860px;
+    margin: 0 auto 80px auto;
+    padding: 0 20px;
+}
+
+.salle-card {
+    background-color: var(--cyan-medium);
+    border-radius: 18px;
+    padding: 56px 32px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+}
+
+.salle-card h2 {
+    font-family: 'CutePixel', 'Courier New', monospace;
+    color: var(--text-dark);
+    font-size: 34px;
+    margin: 0;
+}
+
+.salle-card p {
+    color: var(--text-dark);
+    font-size: 14px;
+    margin: 0;
+}
+
+.btn-salle {
+    display: inline-block;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border: none;
+    padding: 12px 28px;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-salle:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 22px rgba(0, 187, 170, 0.28);
+}
+
+@media (max-width: 600px) {
+    .salles-grid { grid-template-columns: 1fr; }
+}

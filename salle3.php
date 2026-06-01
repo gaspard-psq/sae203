@@ -1,4 +1,4 @@
-<?php include('header.php'); ?>
+<?php $page_styles = ['style-salle.css', 'style-carousel.css']; include('header.php'); ?>
 
 <section class="intro-section">
     <h1 class="pixel-title"><span class="red-dot">• </span>Salle 3</h1>
