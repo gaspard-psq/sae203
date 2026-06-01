@@ -21,30 +21,9 @@ body {
    NAVIGATION ET EN-TÊTE
    ========================================================================== */
 header {
-    background: linear-gradient(to right, #3ce8d7, #c5f9f2);
     padding: 22px 0;
     position: relative;
-    overflow: hidden;
-}
-
-header::before {
-    content: "";
-    position: absolute;
-    inset: -50%;
-    background: repeating-linear-gradient(
-        -55deg,
-        transparent 0,
-        transparent 30px,
-        rgba(255, 255, 255, 0.25) 30px,
-        rgba(255, 255, 255, 0.25) 50px,
-        transparent 50px,
-        transparent 65px,
-        rgba(255, 255, 255, 0.25) 65px,
-        rgba(255, 255, 255, 0.25) 85px,
-        transparent 85px,
-        transparent 180px
-    );
-    pointer-events: none;
+    background: #ffffff;
 }
 
 header nav {
@@ -117,19 +96,9 @@ h1, .pixel-title {
    PAGE D'ACCUEIL & GABARITS DE PRESENTATION
    ========================================================================== */
 .hero {
-    background-color: var(--bg-light);
     text-align: center;
     padding: 60px 20px;
     position: relative;
-}
-
-.hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    opacity: 0.15;
-    background-image: linear-gradient(45deg, #fff 25%, transparent 25%);
-    background-size: 40px 40px;
 }
 
 .hero p {
@@ -649,17 +618,8 @@ footer .logos {
     overflow: hidden;
 }
 
-/* Motif géométrique en fond du hero */
 .hero-pattern {
-    position: absolute;
-    inset: 0;
-    background-image:
-        linear-gradient(135deg, rgba(255,255,255,0.35) 25%, transparent 25%),
-        linear-gradient(225deg, rgba(255,255,255,0.35) 25%, transparent 25%),
-        linear-gradient(315deg, rgba(255,255,255,0.35) 25%, transparent 25%),
-        linear-gradient(45deg,  rgba(255,255,255,0.35) 25%, transparent 25%);
-    background-size: 60px 60px;
-    pointer-events: none;
+    display: none;
 }
 
 .hero-content {
