@@ -9,10 +9,10 @@
             <!-- Logos -->
             <div class="footer-logos">
                 <div class="footer-logo-wrap">
-                    <img src="mmi2.png" alt="MMI Chambéry">
+                    <img src="../img/mmi2.png" alt="MMI Chambéry">
                 </div>
                 <div class="footer-logo-wrap">
-                    <img src="iut2.png" alt="IUT Chambéry">
+                    <img src="../img/iut2.png" alt="IUT Chambéry">
                 </div>
             </div>
 
