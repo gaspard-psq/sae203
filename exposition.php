@@ -10,22 +10,22 @@
         <div class="salle-card">
             <h2>Salle 1</h2>
             <p>Courte Description de la salle</p>
-            <a href="salle.php?id=1" class="btn-salle">Découvrir la salle</a>
+            <a href="salle1" class="btn-salle">Découvrir la salle</a>
         </div>
         <div class="salle-card">
             <h2>Salle 2</h2>
             <p>Courte Description de la salle</p>
-            <a href="salle.php?id=2" class="btn-salle">Découvrir la salle</a>
+            <a href="salle2" class="btn-salle">Découvrir la salle</a>
         </div>
         <div class="salle-card">
             <h2>Salle 3</h2>
             <p>Courte Description de la salle</p>
-            <a href="salle.php?id=3" class="btn-salle">Découvrir la salle</a>
+            <a href="salle3" class="btn-salle">Découvrir la salle</a>
         </div>
         <div class="salle-card">
             <h2>Salle 4</h2>
             <p>Courte Description de la salle</p>
-            <a href="salle.php?id=4" class="btn-salle">Découvrir la salle</a>
+            <a href="salle4" class="btn-salle">Découvrir la salle</a>
         </div>
     </section>
 </div>

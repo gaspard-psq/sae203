@@ -96,6 +96,14 @@ h1, .pixel-title {
     border-radius: 20px;
     text-decoration: none;
     margin-top: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 22px rgba(0, 187, 170, 0.28);
 }
 
 /* ==========================================================================
@@ -142,14 +150,14 @@ h1, .pixel-title {
 }
 
 .salle-card h2 {
-    color: #ffffff;
-    font-size: 22px;
-    font-weight: 700;
+    font-family: 'CutePixel', 'Courier New', monospace;
+    color: var(--text-dark);
+    font-size: 34px;
     margin: 0;
 }
 
 .salle-card p {
-    color: rgba(255, 255, 255, 0.85);
+    color: var(--text-dark);
     font-size: 14px;
     margin: 0;
 }
@@ -165,11 +173,12 @@ h1, .pixel-title {
     font-weight: 600;
     text-decoration: none;
     margin-top: 10px;
-    transition: all 0.25s ease;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .btn-salle:hover {
-    background-color: #ffffff;
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 22px rgba(0, 187, 170, 0.28);
 }
 
 @media (max-width: 600px) {
@@ -177,17 +186,17 @@ h1, .pixel-title {
 }
 
 .works-list {
-    max-width: 800px;
-    margin: 40px auto;
-    padding: 0 20px;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
 .work-item {
     display: flex;
     align-items: center;
-    gap: 30px;
-    margin-bottom: 20px;
-    padding: 20px;
+    gap: 60px;
+    margin-bottom: 0;
+    padding: 50px 80px;
 }
 
 .work-item:nth-child(odd) {
@@ -196,20 +205,77 @@ h1, .pixel-title {
 }
 
 .work-item:nth-child(even) {
-    background-color: var(--cyan-dark);
-    color: #ffffff;
+    background-color: var(--cyan-medium);
+    color: var(--text-dark);
     flex-direction: row-reverse;
 }
 
 .work-img-placeholder {
     background-color: #ffffff;
-    width: 150px;
-    height: 150px;
+    min-width: 200px;
+    width: 200px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     color: #000;
     font-weight: bold;
+    border-radius: 8px;
+}
+
+/* ==========================================================================
+   NAVIGATION BAS DE PAGE — SALLES
+   ========================================================================== */
+.salle-carousel-bg {
+    background-color: var(--cyan-dark);
+    height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 13px;
+    font-style: italic;
+}
+
+.salle-nav-bar {
+    background-color: var(--bg-light);
+    padding: 24px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+}
+
+.salle-nav-arrow {
+    font-size: 32px;
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 300;
+    line-height: 1;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.salle-nav-arrow:hover {
+    color: var(--cyan-dark);
+    transform: scale(1.2);
+}
+
+.btn-salle-nav {
+    display: inline-block;
+    background-color: #ffffff;
+    color: var(--text-dark);
+    border: none;
+    padding: 13px 30px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-salle-nav:hover {
+    transform: translateY(-3px) scale(1.04);
+    box-shadow: 0 8px 22px rgba(0, 187, 170, 0.28);
 }
 
 /* ==========================================================================

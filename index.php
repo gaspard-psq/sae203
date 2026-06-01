@@ -63,7 +63,7 @@
                             <span class="slide-num">01</span>
                             <h3>Salle 002</h3>
                             <p>Exposition principale E-llusion</p>
-                            <a href="salle.php?id=1" class="btn-slide">Découvrir</a>
+                            <a href="salle1.php" class="btn-slide">Découvrir</a>
                         </div>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                             <span class="slide-num">02</span>
                             <h3>Salle 001</h3>
                             <p>Atelier interactif</p>
-                            <a href="salle.php?id=2" class="btn-slide">Découvrir</a>
+                            <a href="salle2.php" class="btn-slide">Découvrir</a>
                         </div>
                     </div>
                 </div>
@@ -87,7 +87,7 @@
                             <span class="slide-num">03</span>
                             <h3>Salle 005</h3>
                             <p>Zone VR</p>
-                            <a href="salle.php?id=3" class="btn-slide">Découvrir</a>
+                            <a href="salle3.php" class="btn-slide">Découvrir</a>
                         </div>
                     </div>
                 </div>
@@ -99,7 +99,7 @@
                             <span class="slide-num">04</span>
                             <h3>Salle 021</h3>
                             <p>Projection</p>
-                            <a href="salle.php?id=4" class="btn-slide">Découvrir</a>
+                            <a href="salle4.php" class="btn-slide">Découvrir</a>
                         </div>
                     </div>
                 </div>
