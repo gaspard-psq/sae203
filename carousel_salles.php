@@ -26,7 +26,7 @@
                         <div class="slide-content">
                             <span class="slide-num">Salle 005</span>
                             <h3>Salle n°2</h3>
-                            <p>Atelier interactif</p>
+                            <p>Horizon</p>
                             <a href="salle2.php" class="btn-slide">Découvrir</a>
                         </div>
                     </div>
@@ -38,7 +38,7 @@
                         <div class="slide-content">
                             <span class="slide-num">Salle 002</span>
                             <h3>Salle n°3</h3>
-                            <p>Zone VR</p>
+                            <p>L'envers du Décor</p>
                             <a href="salle3.php" class="btn-slide">Découvrir</a>
                         </div>
                     </div>
@@ -50,7 +50,7 @@
                         <div class="slide-content">
                             <span class="slide-num">Salle 001</span>
                             <h3>Salle n°4</h3>
-                            <p>Projection</p>
+                            <p>La pépinière</p>
                             <a href="salle4.php" class="btn-slide">Découvrir</a>
                         </div>
                     </div>
