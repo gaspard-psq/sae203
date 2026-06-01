@@ -1,0 +1,975 @@
+/* ==========================================================================
+   VARIABLES ET CONFIGURATION GLOBALE
+   ========================================================================== */
+:root {
+    --bg-light: #c5f9f2;      /* Bleu très clair pour arrière-plans */
+    --cyan-medium: #3ce8d7;   /* Cyan moyen pour les blocs de couleur */
+    --cyan-dark: #00bbaa;     /* Cyan foncé pour les titres et boutons */
+    --text-dark: #000000;     /* Couleur du texte */
+    --accent-red: #af0000;    /* Point d'accentuation rouge */
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    color: var(--text-dark);
+    background-color: #ffffff;
+}
+
+/* ==========================================================================
+   NAVIGATION ET EN-TÊTE
+   ========================================================================== */
+header {
+    background: linear-gradient(to right, #3ce8d7, #c5f9f2);
+    padding: 22px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: "";
+    position: absolute;
+    inset: -50%;
+    background: repeating-linear-gradient(
+        -55deg,
+        transparent 0,
+        transparent 30px,
+        rgba(255, 255, 255, 0.25) 30px,
+        rgba(255, 255, 255, 0.25) 50px,
+        transparent 50px,
+        transparent 65px,
+        rgba(255, 255, 255, 0.25) 65px,
+        rgba(255, 255, 255, 0.25) 85px,
+        transparent 85px,
+        transparent 180px
+    );
+    pointer-events: none;
+}
+
+header nav {
+    position: relative;
+    z-index: 1;
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* ==========================================================================
+   TYPOGRAPHIE ET COMPOSANTS GENERAUX
+   ========================================================================== */
+h1, .pixel-title {
+    font-family: 'CutePixel', 'Courier New', monospace;
+    font-size: 48px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.red-dot {
+    color: var(--accent-red);
+}
+
+.intro-section {
+    text-align: center;
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* Boutons */
+.btn-main {
+    display: inline-block;
+    background-color: #ffffff;
+    color: var(--accent-red);
+    border: 2px solid var(--accent-red);
+    padding: 12px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-secondary {
+    display: inline-block;
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    padding: 10px 25px;
+    border-radius: 20px;
+    text-decoration: none;
+    margin-top: 15px;
+}
+
+/* ==========================================================================
+   PAGE D'ACCUEIL & GABARITS DE PRESENTATION
+   ========================================================================== */
+.hero {
+    background-color: var(--bg-light);
+    text-align: center;
+    padding: 60px 20px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    opacity: 0.15;
+    background-image: linear-gradient(45deg, #fff 25%, transparent 25%);
+    background-size: 40px 40px;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 30px;
+}
+
+.carousel-box {
+    border: 1px solid #ccc;
+    padding: 60px 20px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 800px;
+    background-color: #f9f9f9;
+}
+
+.salles-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.works-list {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.work-item {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-bottom: 20px;
+    padding: 20px;
+}
+
+.work-item:nth-child(odd) {
+    background-color: var(--bg-light);
+    flex-direction: row;
+}
+
+.work-item:nth-child(even) {
+    background-color: var(--cyan-dark);
+    color: #ffffff;
+    flex-direction: row-reverse;
+}
+
+.work-img-placeholder {
+    background-color: #ffffff;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   STRUCTURE COMPLÈTE DU FORMULAIRE DE RÉSERVATION LINÉAIRE
+   ========================================================================== */
+.form-wrapper-linear {
+    max-width: 850px;
+    margin: 0 auto 80px auto;
+}
+
+.form-section-linear {
+    background-color: rgba(255, 255, 255, 0.7);
+    padding: 40px;
+    border-radius: 14px;
+    margin-bottom: 40px;
+    border: 1px solid rgba(60, 232, 215, 0.25);
+    box-shadow: 0 4px 15px rgba(0, 187, 170, 0.03);
+}
+
+.form-section-linear h3 {
+    display: flex;
+    align-items: center;
+    color: var(--cyan-dark);
+    font-size: 22px;
+    margin-top: 0;
+    margin-bottom: 25px;
+}
+
+.section-icon {
+    background-color: var(--cyan-medium);
+    color: #ffffff;
+    font-size: 12px;
+    padding: 8px 10px;
+    border-radius: 6px;
+    margin-right: 12px;
+}
+
+/* Groupes de champs textuels */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #222222;
+}
+
+.input-group input[type="text"],
+.input-group input[type="email"],
+.input-group input[type="number"] {
+    width: 100%;
+    padding: 16px;
+    border: 2px solid var(--bg-light);
+    border-radius: 8px;
+    background-color: #ffffff;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--cyan-dark);
+    box-shadow: 0 0 0 4px rgba(0, 187, 170, 0.15);
+}
+
+/* Boutons Radios horizontaux (Profils) */
+.radio-group-horizontal {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.custom-radio {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 16px;
+    user-select: none;
+}
+
+.custom-radio input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+}
+
+.radio-mark {
+    position: absolute;
+    top: -2px; left: 0;
+    height: 22px; width: 22px;
+    background-color: #ffffff;
+    border: 2px solid var(--cyan-medium);
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.custom-radio input:checked ~ .radio-mark {
+    background-color: var(--cyan-dark);
+    border-color: var(--cyan-dark);
+}
+
+.radio-mark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    top: 6px; left: 6px;
+    width: 6px; height: 6px;
+    border-radius: 50%;
+    background: white;
+}
+
+.custom-radio input:checked ~ .radio-mark:after {
+    display: block;
+}
+
+/* Cases à cocher (Options) */
+.custom-checkbox {
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    padding-left: 35px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.custom-checkbox input {
+    position: absolute;
+    opacity: 0;
+    width: 0; height: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 2px; left: 0;
+    height: 22px; width: 22px;
+    background-color: #ffffff;
+    border: 2px solid var(--cyan-medium);
+    border-radius: 4px;
+}
+
+.custom-checkbox input:checked ~ .checkmark {
+    background-color: var(--cyan-dark);
+    border-color: var(--cyan-dark);
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+    left: 6px; top: 2px;
+    width: 5px; height: 10px;
+    border: solid white;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.custom-checkbox input:checked ~ .checkmark:after {
+    display: block;
+}
+
+/* ==========================================================================
+   ACCORDÉONS — SALLES
+   ========================================================================== */
+.salles-accordion-list {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.salle-accordion {
+    background-color: #ffffff;
+    border: 2px solid var(--bg-light);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+.salle-accordion[open] {
+    border-color: var(--cyan-medium);
+    box-shadow: 0 5px 15px rgba(0, 187, 170, 0.05);
+}
+
+.salle-summary {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    user-select: none;
+    list-style: none;
+}
+
+.salle-summary::-webkit-details-marker {
+    display: none;
+}
+
+.salle-summary-text {
+    flex-grow: 1;
+}
+
+.salle-summary-text h4 {
+    margin: 0 0 4px 0;
+    font-size: 18px;
+    color: var(--text-dark);
+}
+
+.salle-summary-text small {
+    color: #666;
+    font-size: 13px;
+}
+
+.accordion-arrow {
+    font-size: 12px;
+    color: var(--cyan-dark);
+    transition: transform 0.2s ease;
+}
+
+.salle-accordion[open] .accordion-arrow {
+    transform: rotate(180deg);
+}
+
+.horaires-dropdown-content {
+    padding: 25px;
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+}
+
+/* ==========================================================================
+   SÉLECTEUR DE JOUR (TOGGLE BUTTONS)
+   ========================================================================== */
+.jour-selector {
+    margin-bottom: 20px;
+}
+
+.jour-selector > p {
+    font-weight: bold;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: #333;
+}
+
+.jour-toggle-group {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.jour-toggle-btn {
+    cursor: pointer;
+    display: block;
+}
+
+.jour-toggle-btn input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.jour-toggle-btn span {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid var(--bg-light);
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #555;
+    background: #fff;
+    transition: all 0.2s ease;
+    user-select: none;
+    cursor: pointer;
+}
+
+.jour-toggle-btn:hover span {
+    border-color: var(--cyan-medium);
+    color: var(--cyan-dark);
+}
+
+.jour-toggle-btn input:checked + span {
+    background-color: var(--cyan-dark);
+    border-color: var(--cyan-dark);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   GRILLE DE CRÉNEAUX (BADGES HORAIRES)
+   ========================================================================== */
+.journee-block {
+    margin-bottom: 20px;
+}
+
+.journee-block:last-child {
+    margin-bottom: 0;
+}
+
+.journee-block h5 {
+    margin: 0 0 12px 0;
+    font-size: 14px;
+    color: var(--cyan-dark);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.horaires-badges-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+}
+
+.horaire-badge-item {
+    position: relative;
+    cursor: pointer;
+}
+
+.horaire-badge-item input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.badge-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border: 2px solid #eee;
+    padding: 12px;
+    border-radius: 8px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+
+.badge-time {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--text-dark);
+}
+
+.badge-places {
+    font-size: 11px;
+    color: #777;
+    margin-top: 3px;
+}
+
+/* Hover sur badge disponible */
+.horaire-badge-item:not(.is-disabled):hover .badge-content {
+    border-color: var(--cyan-medium);
+    cursor: pointer;
+}
+
+/* Badge sélectionné (classe .selected ajoutée via JS) */
+.horaire-badge-item.selected .badge-content {
+    background-color: var(--cyan-dark);
+    border-color: var(--cyan-dark);
+}
+
+.horaire-badge-item.selected .badge-time,
+.horaire-badge-item.selected .badge-places {
+    color: #ffffff;
+}
+
+/* Badge complet */
+.horaire-badge-item.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+}
+
+.horaire-badge-item.is-disabled .badge-content {
+    background-color: #f0f0f0;
+    border-color: #ddd;
+    cursor: not-allowed;
+}
+
+/* Zone nombre de personnes (apparaît après sélection d'un créneau) */
+.nb-personnes-zone {
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.jauge-info-txt {
+    display: block;
+    margin-top: 6px;
+    color: #888;
+    font-size: 13px;
+}
+
+/* Hint créneaux */
+.creneaux-hint {
+    color: #aaa;
+    font-style: italic;
+    font-size: 14px;
+    margin: 0;
+}
+
+
+
+/* ==========================================================================
+   FOOTER DU FORMULAIRE ET BOUTON SOUMETTRE
+   ========================================================================== */
+.form-footer-linear {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.btn-submit-large {
+    background-color: var(--cyan-medium);
+    color: #ffffff;
+    border: none;
+    padding: 18px 60px;
+    border-radius: 35px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(60, 232, 215, 0.4);
+}
+
+.btn-submit-large:hover {
+    background-color: var(--cyan-dark);
+    transform: translateY(-3px);
+}
+
+
+
+/* ==========================================================================
+   PIED DE PAGE
+   ========================================================================== */
+footer {
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 60px;
+    font-size: 14px;
+    border-top: 1px solid #eee;
+}
+
+footer .logos {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 20px;
+    font-weight: bold;
+}
+
+/* ==========================================================================
+   PAGE D'ACCUEIL — HERO
+   ========================================================================== */
+.hero {
+    position: relative;
+    background-color: var(--bg-light);
+    padding: 80px 20px 70px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Motif géométrique en fond du hero */
+.hero-pattern {
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(135deg, rgba(255,255,255,0.35) 25%, transparent 25%),
+        linear-gradient(225deg, rgba(255,255,255,0.35) 25%, transparent 25%),
+        linear-gradient(315deg, rgba(255,255,255,0.35) 25%, transparent 25%),
+        linear-gradient(45deg,  rgba(255,255,255,0.35) 25%, transparent 25%);
+    background-size: 60px 60px;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.hero-content .pixel-title {
+    font-size: 64px;
+    margin: 0 0 20px;
+    line-height: 1.1;
+}
+
+.hero-sub {
+    font-size: 18px;
+    line-height: 1.7;
+    margin: 0 0 35px;
+    color: #1a1a1a;
+}
+
+.btn-hero {
+    display: inline-block;
+    background-color: #ffffff;
+    color: var(--accent-red);
+    border: 2px solid var(--accent-red);
+    padding: 14px 38px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    transition: all 0.25s ease;
+}
+
+.btn-hero:hover {
+    background-color: var(--accent-red);
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   SECTION PRÉSENTATION
+   ========================================================================== */
+.section-title {
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin: 0 0 12px;
+}
+
+.intro-divider {
+    width: 50px;
+    height: 3px;
+    background-color: var(--cyan-medium);
+    margin: 0 auto 30px;
+    border-radius: 2px;
+}
+
+.intro-section {
+    text-align: center;
+    padding: 70px 20px;
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.intro-text {
+    font-size: 16px;
+    line-height: 1.8;
+    color: #333;
+    margin: 0 0 30px;
+}
+
+/* ==========================================================================
+   CHIFFRES CLÉS
+   ========================================================================== */
+.chiffres-section {
+    background-color: var(--bg-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 50px 20px;
+}
+
+.chiffre-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 50px;
+}
+
+.chiffre-nb {
+    font-family: 'CutePixel', 'Courier New', monospace;
+    font-size: 48px;
+    color: var(--cyan-dark);
+    line-height: 1;
+}
+
+.chiffre-label {
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #555;
+    margin-top: 6px;
+}
+
+.chiffre-sep {
+    width: 1px;
+    height: 50px;
+    background-color: rgba(0,187,170,0.3);
+}
+
+/* ==========================================================================
+   CAROUSEL SALLES
+   ========================================================================== */
+.carousel-section {
+    padding: 70px 20px 50px;
+    text-align: center;
+    background-color: #ffffff;
+}
+
+.carousel-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin: 40px auto 0;
+    max-width: 900px;
+}
+
+.carousel-track-container {
+    flex: 1;
+    overflow: hidden;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-slide {
+    min-width: 100%;
+}
+
+.slide-bg {
+    position: relative;
+    height: 380px;
+    display: flex;
+    align-items: flex-end;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Couleurs de substitution en attendant les vraies images */
+.slide-bg-1 { background-color: #00bbaa; }
+.slide-bg-2 { background-color: #3ce8d7; }
+.slide-bg-3 { background-color: #00a090; }
+.slide-bg-4 { background-color: #007d72; }
+
+.slide-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%);
+}
+
+.slide-content {
+    position: relative;
+    z-index: 1;
+    padding: 30px;
+    text-align: left;
+    color: #ffffff;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.slide-num {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    opacity: 0.7;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.slide-content h3 {
+    font-size: 28px;
+    font-weight: 800;
+    margin: 0 0 6px;
+}
+
+.slide-content p {
+    font-size: 14px;
+    margin: 0 0 18px;
+    opacity: 0.85;
+}
+
+.btn-slide {
+    display: inline-block;
+    background-color: #ffffff;
+    color: var(--text-dark);
+    padding: 9px 22px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: all 0.2s ease;
+}
+
+.btn-slide:hover {
+    background-color: var(--cyan-medium);
+    color: #ffffff;
+}
+
+.carousel-btn {
+    background-color: #ffffff;
+    border: 2px solid var(--bg-light);
+    color: var(--text-dark);
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+}
+
+.carousel-btn:hover {
+    background-color: var(--cyan-dark);
+    border-color: var(--cyan-dark);
+    color: #ffffff;
+}
+
+.carousel-dots {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 24px;
+}
+
+.dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--bg-light);
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.dot.active {
+    background-color: var(--cyan-dark);
+    transform: scale(1.3);
+}
+
+/* ==========================================================================
+   CTA FINAL
+   ========================================================================== */
+.cta-section {
+    background-color: var(--cyan-dark);
+    padding: 70px 20px;
+    text-align: center;
+}
+
+.cta-inner {
+    max-width: 550px;
+    margin: 0 auto;
+}
+
+.cta-inner h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #ffffff;
+    margin: 0 0 14px;
+}
+
+.cta-inner p {
+    color: rgba(255,255,255,0.85);
+    font-size: 16px;
+    margin: 0 0 30px;
+    line-height: 1.6;
+}
+
+.cta-section .btn-hero {
+    background-color: #ffffff;
+    color: var(--cyan-dark);
+    border-color: #ffffff;
+}
+
+.cta-section .btn-hero:hover {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 600px) {
+    .hero-content .pixel-title { font-size: 40px; }
+    .chiffre-item { padding: 0 20px; }
+    .chiffre-sep { display: none; }
+    .chiffres-section { gap: 30px; }
+    .carousel-wrapper { gap: 10px; }
+    .carousel-btn { width: 38px; height: 38px; font-size: 14px; }
+    .slide-bg { height: 280px; }
+}
