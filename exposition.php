@@ -9,23 +9,23 @@
     <section class="salles-grid">
         <div class="salle-card">
             <h2>Salle 1</h2>
-            <p>Courte Description de la salle</p>
-            <a href="salle1" class="btn-salle">Découvrir la salle</a>
+            <p>Societ-e</p>
+            <a href="salle1.php" class="btn-salle">Découvrir la salle</a>
         </div>
         <div class="salle-card">
             <h2>Salle 2</h2>
-            <p>Courte Description de la salle</p>
-            <a href="salle2" class="btn-salle">Découvrir la salle</a>
+            <p>Horizon</p>
+            <a href="salle2.php" class="btn-salle">Découvrir la salle</a>
         </div>
         <div class="salle-card">
             <h2>Salle 3</h2>
-            <p>Courte Description de la salle</p>
-            <a href="salle3" class="btn-salle">Découvrir la salle</a>
+            <p>L'envers du Décor</p>
+            <a href="salle3.php" class="btn-salle">Découvrir la salle</a>
         </div>
         <div class="salle-card">
             <h2>Salle 4</h2>
-            <p>Courte Description de la salle</p>
-            <a href="salle4" class="btn-salle">Découvrir la salle</a>
+            <p>La pépinière</p>
+            <a href="salle4.php" class="btn-salle">Découvrir la salle</a>
         </div>
     </section>
 </div>

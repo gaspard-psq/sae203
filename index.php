@@ -12,12 +12,12 @@
 
 <!-- PRÉSENTATION -->
 <section class="intro-section">
-    <h2 class="section-title">Venez découvrir notre exposition</h2>
+    <h2 class="section-title">Bienvenue sur le site de l'exposition E-llusion !</h2>
     <div class="intro-divider"></div>
     <p class="intro-text">
-        Cette exposition a été imaginée et créée de toute pièce par des étudiants en première année de BUT MMI (Métiers du multimédia et de l'internet). 
-        Le thème est <strong>E-llusion</strong> — une plongée dans les illusions du numérique, entre perception et réalité.
-        Répartie en 4 salles avec 3 à 4 œuvres chacune, elle vous invite à questionner vos sens.
+Cette exposition a été imaginée et créée de toutes pièces par des étudiants en première année de BUT MMI (Métiers du multimédia et de l'internet).
+<br><br>
+Le thème de l'exposition ? E-llusion, venez la découvrir à travers un parcours réparti en 4 salles où vous attendent 12 œuvres originales (3 ou 4 œuvres par salle) qui explorent le numérique et les faux-semblants.
     </p>
     <a href="exposition.php" class="btn-secondary">En savoir plus</a>
 </section>
@@ -30,13 +30,13 @@
     </div>
     <div class="chiffre-sep"></div>
     <div class="chiffre-item">
-        <span class="chiffre-nb">16</span>
+        <span class="chiffre-nb">12</span>
         <span class="chiffre-label">Œuvres</span>
     </div>
     <div class="chiffre-sep"></div>
     <div class="chiffre-item">
-        <span class="chiffre-nb">2</span>
-        <span class="chiffre-label">Jours</span>
+        <span class="chiffre-nb">1</span>
+        <span class="chiffre-label">Jour</span>
     </div>
     <div class="chiffre-sep"></div>
     <div class="chiffre-item">
