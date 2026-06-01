@@ -118,14 +118,6 @@
     </div>
 </section>
 
-<!-- CTA FINAL -->
-<section class="cta-section">
-    <div class="cta-inner">
-        <h2>Rendez-nous visite ! </h2>
-        <p>Réservez vos créneaux gratuitement le jeudi 18 et vendredi 19 juin.</p>
-        <a href="reservation.php" class="btn-hero">Réserver ma place</a>
-    </div>
-</section>
 
 <script>
 const track  = document.getElementById('carouselTrack');
