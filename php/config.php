@@ -1,9 +1,9 @@
 <?php
-// Configuration des identifiants locaux de XAMPP
-$host = 'localhost';
-$dbname = 'ellusion_db'; // Le nom de la base de données que tu as créée ou vas créer
-$username = 'root';     // Identifiant par défaut sur XAMPP
-$password = '';         // Mot de passe par défaut (vide) sur XAMPP
+// Configuration OVH
+$host = 'ijtebowcompte12.mysql.db';
+$dbname = 'ijtebowcompte12';
+$username = 'ijtebowcompte12';
+$password = 'xg8CvR452026';
 
 try {
     // Connexion sécurisée via PDO (on utilise $db comme dans ton fichier reservation.php)

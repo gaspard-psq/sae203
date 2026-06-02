@@ -36,9 +36,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action_inscription'])
 }
 
 // 2. RÉCUPÉRATION DES DONNÉES
-$categories = $db->query("SELECT * FROM categorie_visiteur ORDER BY id_categorie ASC")->fetchAll(PDO::FETCH_ASSOC);
+$categories    = $db->query("SELECT * FROM categorie_visite ORDER BY id_categorie ASC")->fetchAll(PDO::FETCH_ASSOC);
 $tous_creneaux = $db->query("SELECT * FROM creneau ORDER BY date, heure_debut")->fetchAll(PDO::FETCH_ASSOC);
-$salles_db = $db->query("SELECT * FROM salle ORDER BY nom ASC")->fetchAll(PDO::FETCH_ASSOC);
+$salles_db     = $db->query("SELECT * FROM salle ORDER BY nom ASC")->fetchAll(PDO::FETCH_ASSOC);
 
 // Index des places restantes par salle + jour + heure pour le JS
 $jauge_index = [];
@@ -53,7 +53,6 @@ foreach ($tous_creneaux as $c) {
 
 $jauge_json = json_encode($jauge_index);
 
-$page_styles = ['style-reservation.css'];
 include('header.php');
 ?>
 
@@ -151,8 +150,6 @@ include('header.php');
                     </details>
                     <?php endforeach; ?>
                 </div>
-
-
             </div>
 
             <!-- ÉTAPE 04 : Buffet -->
@@ -191,14 +188,11 @@ const CRENEAUX_DATA = {
 let selectedSalleId   = null;
 let selectedCreneauId = null;
 
-// Changement de jour → affiche les créneaux
 document.querySelectorAll('.jour-radio').forEach(radio => {
     radio.addEventListener('change', function () {
         const salleId = this.dataset.salle;
         const jourKey = this.value;
         renderCreneaux(salleId, jourKey);
-
-        // Réinitialise la sélection de créneau
         selectedCreneauId = null;
         document.getElementById('hidden_id_creneau').value = '';
         document.getElementById('nb_zone_' + salleId).style.display = 'none';
@@ -206,17 +200,15 @@ document.querySelectorAll('.jour-radio').forEach(radio => {
 });
 
 function renderCreneaux(salleId, jourKey) {
-    const zone       = document.getElementById('creneaux_salle_' + salleId);
-    const jourData   = CRENEAUX_DATA[jourKey];
+    const zone        = document.getElementById('creneaux_salle_' + salleId);
+    const jourData    = CRENEAUX_DATA[jourKey];
     const jaugesSalle = (JAUGE_INDEX[salleId] && JAUGE_INDEX[salleId][jourKey]) ? JAUGE_INDEX[salleId][jourKey] : {};
 
     let html = '<div class="horaires-badges-grid">';
-
     jourData.slots.forEach(slot => {
         const jaugeInfo  = jaugesSalle[slot] || null;
         const idCreneau  = jaugeInfo ? jaugeInfo.id_creneau : null;
         const placesRest = jaugeInfo ? jaugeInfo.places_restantes : 12;
-
         html += `
             <label class="horaire-badge-item"
                 data-id-creneau="${idCreneau}"
@@ -231,14 +223,11 @@ function renderCreneaux(salleId, jourKey) {
             </label>
         `;
     });
-
     html += '</div>';
     zone.innerHTML = html;
 
-    // Écouteurs sur les badges
     zone.querySelectorAll('.horaire-badge-item').forEach(badge => {
         badge.addEventListener('click', function () {
-            // Déselectionne tout
             document.querySelectorAll('.horaire-badge-item').forEach(b => b.classList.remove('selected'));
             this.classList.add('selected');
 
@@ -248,24 +237,16 @@ function renderCreneaux(salleId, jourKey) {
 
             document.getElementById('hidden_id_creneau').value = selectedCreneauId || '';
 
-            // Affiche + met à jour le champ nb personnes de cette salle
-            const nbZone = document.getElementById('nb_zone_' + salleId);
+            const nbZone  = document.getElementById('nb_zone_' + salleId);
             nbZone.style.display = 'block';
             const nbInput = document.getElementById('nb_personnes_' + salleId);
             nbInput.max = placesMax;
             if (parseInt(nbInput.value) > placesMax) nbInput.value = placesMax;
             document.getElementById('jauge-info-' + salleId).textContent = placesMax + ' place(s) disponible(s) sur ce créneau.';
-
-            // Récap
-            const slotLabel  = this.dataset.slot.replace(':','h');
-            const jourLabel  = CRENEAUX_DATA[this.dataset.jour].label;
-            const salleEl    = document.querySelector(`details[data-salle-id="${salleId}"]`);
-            const salleNom   = salleEl ? salleEl.querySelector('.salle-summary-text h4').textContent : '';
         });
     });
 }
 
-// Ferme les autres accordéons quand on en ouvre un
 document.querySelectorAll('.salle-accordion').forEach(details => {
     details.addEventListener('toggle', function () {
         if (this.open) {
@@ -276,7 +257,6 @@ document.querySelectorAll('.salle-accordion').forEach(details => {
     });
 });
 
-// Validation avant envoi
 document.getElementById('formReservation').addEventListener('submit', function(e) {
     const idCreneau = document.getElementById('hidden_id_creneau').value;
     if (!idCreneau) {
