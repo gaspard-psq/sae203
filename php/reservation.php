@@ -53,6 +53,7 @@ foreach ($tous_creneaux as $c) {
 
 $jauge_json = json_encode($jauge_index);
 
+$page_styles = ['style-reservation.css'];
 include('header.php');
 ?>
 
@@ -117,20 +118,8 @@ include('header.php');
 
                         <div class="horaires-dropdown-content">
 
-                            <!-- Choix du jour -->
-                            <div class="jour-selector">
-                                <p>Choisissez un jour :</p>
-                                <div class="jour-toggle-group">
-                                    <label class="jour-toggle-btn">
-                                        <input type="radio" name="jour_salle_<?php echo $id_salle; ?>" value="jeudi" class="jour-radio" data-salle="<?php echo $id_salle; ?>">
-                                        <span>Jeudi 18 juin</span>
-                                    </label>
-                                    <label class="jour-toggle-btn">
-                                        <input type="radio" name="jour_salle_<?php echo $id_salle; ?>" value="vendredi" class="jour-radio" data-salle="<?php echo $id_salle; ?>">
-                                        <span>Vendredi 19 juin</span>
-                                    </label>
-                                </div>
-                            </div>
+                            <!-- Jour unique : Jeudi 18 juin -->
+                            <input type="hidden" name="jour_salle_<?php echo $id_salle; ?>" value="jeudi" class="jour-radio" data-salle="<?php echo $id_salle; ?>">
 
                             <!-- Créneaux injectés via JS -->
                             <div class="creneaux-zone" id="creneaux_salle_<?php echo $id_salle; ?>">
@@ -178,26 +167,12 @@ const CRENEAUX_DATA = {
     jeudi: {
         label: 'Jeudi 18 juin',
         slots: ['15:00','15:30','16:00','16:30','17:00','17:30','18:00','19:00','19:30','20:00']
-    },
-    vendredi: {
-        label: 'Vendredi 19 juin',
-        slots: ['09:30','10:00','10:30','11:00']
     }
 };
 
 let selectedSalleId   = null;
 let selectedCreneauId = null;
 
-document.querySelectorAll('.jour-radio').forEach(radio => {
-    radio.addEventListener('change', function () {
-        const salleId = this.dataset.salle;
-        const jourKey = this.value;
-        renderCreneaux(salleId, jourKey);
-        selectedCreneauId = null;
-        document.getElementById('hidden_id_creneau').value = '';
-        document.getElementById('nb_zone_' + salleId).style.display = 'none';
-    });
-});
 
 function renderCreneaux(salleId, jourKey) {
     const zone        = document.getElementById('creneaux_salle_' + salleId);
@@ -253,6 +228,9 @@ document.querySelectorAll('.salle-accordion').forEach(details => {
             document.querySelectorAll('.salle-accordion').forEach(other => {
                 if (other !== this) other.removeAttribute('open');
             });
+
+            const salleId = this.dataset.salleId;
+            renderCreneaux(salleId, 'jeudi');
         }
     });
 });
