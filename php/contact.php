@@ -54,7 +54,7 @@
                 <p class="contact-name">François Piranda</p>
                 <div class="contact-divider"></div>
                 <p class="contact-label">Contact</p>
-                <a href="tel:+330000000000" class="contact-phone">+33 0000000000</a>
+                <a href="mailto:francois.piranda@univ-smb.fr" class="contact-phone">francois.piranda@univ-smb.fr</a>
             </div>
         </aside>
 
