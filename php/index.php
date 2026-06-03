@@ -5,7 +5,7 @@
     <div class="hero-pattern"></div>
     <div class="hero-content">
         <h1 class="pixel-title">E-llusion<span class="red-dot">.</span></h1>
-        <p class="hero-sub">ne exposition réalisée par des étudiants en MMI.<br>Venez la découvrir dès maintenant en réservant votre créneau.</p>
+        <p class="hero-sub">Une exposition réalisée par des étudiants en MMI.<br>Venez la découvrir dès maintenant en réservant votre créneau.</p>
         <a href="reservation.php" class="btn-hero">Réservez un créneau</a>
     </div>
 </section>
