@@ -9,7 +9,7 @@
     <div class="work-item">
         <div class="work-img-placeholder">Œuvre 1</div>
         <div class="work-text">
-            <p>TAPIS ROUGE est une installation interactive et immersive qui détourne les codes du prestige pour confronter le spectateur aux réalités sociales invisibles de la production industrielle.<br><br>
+            <p>Tapis rouge est une installation interactive et immersive qui détourne les codes du prestige pour confronter le spectateur aux réalités sociales invisibles de la production industrielle.<br><br>
 Un tapis rouge physique invite le public à s'avancer sous des projecteurs de scène. Le mouvement du visiteur contrôle directement une vidéo projetée sur le mur frontal : d'abord une ambiance de luxe et de privilège puis, à mesure qu'il avance, les coulisses de la consommation s'imposent : entrepôts, lignes de production, infrastructures froides.<br><br>
 En bout de course, l'image devient grave : pénibilité du travail, insalubrité des usines, épuisement des corps. L'œuvre révèle que chaque pas vers le succès repose sur une réalité humaine sacrifiée.
 </p>
