@@ -7,12 +7,11 @@
 }
 
 .form-section-linear {
-    background-color: var(--bg-light);
+    background-color: #ffffff;
+    border: 2px solid #000000;
     padding: 36px 40px;
-    border-radius: 14px;
+    border-radius: 0;
     margin-bottom: 20px;
-    border: none;
-    box-shadow: none;
 }
 
 .form-section-linear h3 {
@@ -24,7 +23,7 @@
     margin-top: 0;
     margin-bottom: 28px;
     padding-bottom: 14px;
-    border-bottom: 2px solid rgba(60, 232, 215, 0.6);
+    border-bottom: 2px solid #000000;
 }
 
 .section-icon {
@@ -33,7 +32,7 @@
     font-size: 13px;
     font-weight: 700;
     padding: 5px 11px;
-    border-radius: 6px;
+    border-radius: 0;
     margin-right: 12px;
     letter-spacing: 0.5px;
 }
@@ -57,17 +56,17 @@
     width: 100%;
     padding: 14px 16px;
     border: 2px solid rgba(0, 187, 170, 0.25);
-    border-radius: 8px;
+    border-radius: 0;
     background-color: #ffffff;
     font-size: 16px;
     box-sizing: border-box;
-    transition: all 0.25s ease;
+    transition: border-color 0.2s ease;
 }
 
 .input-group input:focus {
     outline: none;
     border-color: var(--cyan-dark);
-    box-shadow: 0 0 0 3px rgba(0, 187, 170, 0.12);
+    box-shadow: none;
 }
 
 /* ==========================================================================
@@ -102,7 +101,7 @@
     background-color: #ffffff;
     border: 2px solid var(--cyan-dark);
     border-radius: 50%;
-    transition: all 0.2s;
+    transition: background-color 0.2s;
 }
 
 .custom-radio input:checked ~ .radio-mark {
@@ -146,7 +145,7 @@
     height: 22px; width: 22px;
     background-color: #ffffff;
     border: 2px solid var(--cyan-dark);
-    border-radius: 4px;
+    border-radius: 0;
 }
 
 .custom-checkbox input:checked ~ .checkmark {
@@ -178,15 +177,14 @@
 
 .salle-accordion {
     background-color: #ffffff;
-    border: 2px solid rgba(0, 187, 170, 0.2);
-    border-radius: 12px;
+    border: 2px solid #000000;
+    border-radius: 0;
     overflow: hidden;
-    transition: all 0.3s ease;
+    transition: border-color 0.2s ease;
 }
 
 .salle-accordion[open] {
     border-color: var(--cyan-dark);
-    box-shadow: 0 4px 16px rgba(0, 187, 170, 0.12);
 }
 
 .salle-summary {
@@ -221,7 +219,7 @@
 .horaires-dropdown-content {
     padding: 25px;
     background-color: rgba(255, 255, 255, 0.8);
-    border-top: 1px solid rgba(0, 187, 170, 0.15);
+    border-top: 1px solid #000000;
 }
 
 /* ==========================================================================
@@ -249,20 +247,19 @@
 .jour-toggle-btn span {
     display: inline-block;
     padding: 10px 22px;
-    border: 2px solid rgba(0, 187, 170, 0.3);
-    border-radius: 25px;
+    border: 2px solid #000000;
+    border-radius: 0;
     font-size: 14px;
     font-weight: 600;
     color: #444;
     background: #ffffff;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
     user-select: none;
     cursor: pointer;
 }
 
 .jour-toggle-btn:hover span {
-    border-color: var(--cyan-dark);
-    color: var(--cyan-dark);
+    background-color: var(--bg-light);
 }
 
 .jour-toggle-btn input:checked + span {
@@ -294,11 +291,11 @@
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    border: 2px solid rgba(0, 187, 170, 0.2);
+    border: 2px solid #000000;
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 0;
     text-align: center;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .badge-time { font-size: 14px; font-weight: bold; color: var(--text-dark); }
@@ -306,8 +303,7 @@
 .badge-places { font-size: 11px; color: #777; margin-top: 3px; }
 
 .horaire-badge-item:not(.is-disabled):hover .badge-content {
-    border-color: var(--cyan-dark);
-    background-color: rgba(0, 187, 170, 0.04);
+    background-color: var(--bg-light);
     cursor: pointer;
 }
 
@@ -329,7 +325,7 @@
 
 .nb-personnes-zone {
     padding-top: 16px;
-    border-top: 1px solid rgba(0, 187, 170, 0.15);
+    border-top: 1px solid #000000;
 }
 
 .jauge-info-txt { display: block; margin-top: 6px; color: #888; font-size: 13px; }
@@ -346,16 +342,14 @@
     color: #ffffff;
     border: 2px solid var(--cyan-dark);
     padding: 16px 56px;
-    border-radius: 30px;
+    border-radius: 0;
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.25s ease;
-    box-shadow: none;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-submit-large:hover {
-    background-color: transparent;
+    background-color: #ffffff;
     color: var(--cyan-dark);
-    transform: translateY(-2px);
 }

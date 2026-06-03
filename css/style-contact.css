@@ -17,8 +17,9 @@
 }
 
 .contact-info-block {
-    background-color: var(--bg-light);
-    border-radius: 14px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 0;
     padding: 32px 28px;
 }
 
@@ -45,7 +46,7 @@
     width: 36px;
     height: 2px;
     background-color: var(--cyan-medium);
-    border-radius: 2px;
+    border-radius: 0;
     margin-bottom: 20px;
 }
 
@@ -93,42 +94,43 @@
     width: 100%;
     padding: 14px 16px;
     border: 2px solid rgba(0, 187, 170, 0.25);
-    border-radius: 8px;
+    border-radius: 0;
     background-color: #ffffff;
     font-size: 16px;
     box-sizing: border-box;
-    transition: all 0.25s ease;
+    transition: border-color 0.2s ease;
 }
 
 .input-group input:focus {
     outline: none;
     border-color: var(--cyan-dark);
-    box-shadow: 0 0 0 3px rgba(0, 187, 170, 0.12);
+    box-shadow: none;
 }
 
 .input-group textarea {
     width: 100%;
     padding: 14px 16px;
     border: 2px solid rgba(0, 187, 170, 0.25);
-    border-radius: 8px;
+    border-radius: 0;
     background-color: #ffffff;
     font-size: 16px;
     font-family: inherit;
     box-sizing: border-box;
     resize: vertical;
-    transition: all 0.25s ease;
+    transition: border-color 0.2s ease;
 }
 
 .input-group textarea:focus {
     outline: none;
     border-color: var(--cyan-dark);
-    box-shadow: 0 0 0 3px rgba(0, 187, 170, 0.12);
+    box-shadow: none;
 }
 
 .form-section-linear {
-    background-color: var(--bg-light);
+    background-color: #ffffff;
+    border: 2px solid #000000;
     padding: 36px 40px;
-    border-radius: 14px;
+    border-radius: 0;
     margin-bottom: 20px;
 }
 
@@ -141,7 +143,7 @@
     margin-top: 0;
     margin-bottom: 28px;
     padding-bottom: 14px;
-    border-bottom: 2px solid rgba(60, 232, 215, 0.6);
+    border-bottom: 2px solid #000000;
 }
 
 .section-icon {
@@ -150,7 +152,7 @@
     font-size: 13px;
     font-weight: 700;
     padding: 5px 11px;
-    border-radius: 6px;
+    border-radius: 0;
     margin-right: 12px;
 }
 
@@ -161,17 +163,16 @@
     color: #ffffff;
     border: 2px solid var(--cyan-dark);
     padding: 16px 56px;
-    border-radius: 30px;
+    border-radius: 0;
     font-size: 17px;
     font-weight: bold;
     cursor: pointer;
-    transition: all 0.25s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-submit-large:hover {
-    background-color: transparent;
+    background-color: #ffffff;
     color: var(--cyan-dark);
-    transform: translateY(-2px);
 }
 
 @media (max-width: 700px) {

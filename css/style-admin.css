@@ -1,0 +1,176 @@
+/* ==========================================================================
+   PAGE ADMIN — CONNEXION
+   ========================================================================== */
+.admin-login-wrapper {
+    max-width: 450px;
+    margin: 0 auto 80px;
+}
+
+.admin-login-form {
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 0;
+    padding: 40px;
+}
+
+.error-banner {
+    background-color: #ffebeb;
+    color: #af0000;
+    border-left: 4px solid #af0000;
+    border-radius: 0;
+    padding: 14px 18px;
+    margin-bottom: 24px;
+    font-size: 14px;
+}
+
+.admin-logout-link {
+    color: var(--accent-red);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.2s ease;
+}
+.admin-logout-link:hover { color: #000000; }
+
+/* ==========================================================================
+   STATISTIQUES
+   ========================================================================== */
+.admin-stats {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin: 0 auto 40px;
+    max-width: 600px;
+}
+
+.admin-stat-card {
+    background-color: var(--bg-light);
+    color: var(--text-dark);
+    border: 2px solid #000000;
+    border-radius: 0;
+    padding: 24px 40px;
+    text-align: center;
+    flex: 1;
+    min-width: 130px;
+}
+
+.admin-stat-nb {
+    display: block;
+    font-family: 'CutePixel', 'Courier New', monospace;
+    font-size: 42px;
+    line-height: 1;
+    color: var(--cyan-dark);
+}
+
+.admin-stat-label {
+    display: block;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-top: 8px;
+    color: #555;
+}
+
+/* ==========================================================================
+   ALERTES ADMIN
+   ========================================================================== */
+.admin-alert {
+    max-width: 1100px;
+    margin: 0 auto 24px;
+    padding: 14px 20px;
+    border-radius: 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+.admin-alert-success {
+    background-color: #e6fcf9;
+    color: #007d72;
+    border-left: 4px solid var(--cyan-dark);
+}
+.admin-alert-danger {
+    background-color: #ffebeb;
+    color: #af0000;
+    border-left: 4px solid #af0000;
+}
+
+/* ==========================================================================
+   TABLEAU ADMIN
+   ========================================================================== */
+.admin-table-wrapper {
+    max-width: 1200px;
+    margin: 0 auto 80px;
+    overflow-x: auto;
+    border: 2px solid #000000;
+    border-radius: 0;
+}
+
+.admin-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    background: #fff;
+}
+
+.admin-table thead {
+    background-color: var(--cyan-dark);
+    color: #fff;
+}
+
+.admin-table th {
+    padding: 14px 10px;
+    text-align: left;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+
+.admin-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #eee;
+    vertical-align: middle;
+}
+
+.admin-table tbody tr:hover {
+    background-color: rgba(0,187,170,0.04);
+}
+
+.admin-input {
+    width: 100px;
+    padding: 7px 9px;
+    border: 1px solid #ddd;
+    border-radius: 0;
+    font-size: 13px;
+    background: #fff;
+    transition: border-color 0.2s;
+}
+
+.admin-input:focus {
+    outline: none;
+    border-color: var(--cyan-dark);
+}
+
+.admin-input-wide { width: 180px; }
+.admin-input-nb   { width: 55px; }
+
+.admin-actions {
+    white-space: nowrap;
+}
+
+.admin-btn {
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 4px 6px;
+    border-radius: 0;
+    transition: background-color 0.2s ease;
+}
+
+.admin-btn-save:hover   { background: rgba(0,187,170,0.15); }
+.admin-btn-delete:hover { background: rgba(175,0,0,0.12); }
+
+@media (max-width: 700px) {
+    .admin-stat-card { padding: 18px 24px; }
+    .admin-stat-nb { font-size: 32px; }
+}

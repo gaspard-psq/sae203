@@ -48,6 +48,28 @@ header nav ul li a {
     color: var(--text-dark);
     font-weight: 500;
     font-size: 16px;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.2s ease;
+}
+
+header nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--cyan-dark);
+    transition: width 0.2s ease;
+}
+
+header nav ul li a:hover {
+    color: var(--cyan-dark);
+}
+
+header nav ul li a:hover::after {
+    width: 100%;
 }
 
 /* ==========================================================================
@@ -103,9 +125,15 @@ h1, .pixel-title {
     color: var(--accent-red);
     border: 2px solid var(--accent-red);
     padding: 12px 30px;
-    border-radius: 25px;
+    border-radius: 0;
     text-decoration: none;
     font-weight: bold;
+    transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-main:hover {
+    background-color: var(--accent-red);
+    color: #ffffff;
 }
 
 .btn-secondary {
@@ -113,17 +141,17 @@ h1, .pixel-title {
     background-color: var(--bg-light);
     color: var(--text-dark);
     padding: 10px 25px;
-    border-radius: 20px;
+    border-radius: 0;
     text-decoration: none;
     margin-top: 15px;
     position: relative;
     overflow: hidden;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-secondary:hover {
-    transform: translateY(-3px) scale(1.04);
-    box-shadow: 0 8px 22px rgba(0, 187, 170, 0.28);
+    background-color: var(--cyan-dark);
+    color: #ffffff;
 }
 
 .btn-hero {
@@ -132,11 +160,11 @@ h1, .pixel-title {
     color: var(--accent-red);
     border: 2px solid var(--accent-red);
     padding: 14px 38px;
-    border-radius: 30px;
+    border-radius: 0;
     text-decoration: none;
     font-weight: bold;
     font-size: 16px;
-    transition: all 0.25s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-hero:hover {
@@ -226,16 +254,17 @@ h1, .pixel-title {
     text-decoration: none;
     background: rgba(0,0,0,0.06);
     border: 1px solid rgba(0,0,0,0.12);
-    border-radius: 32px;
+    border-radius: 0;
     padding: 11px 22px;
     font-size: 14px;
     font-weight: 600;
-    transition: background 0.25s, transform 0.2s;
+    transition: background 0.2s ease, color 0.2s ease;
 }
 
 .footer-ig-btn:hover {
-    background: rgba(0,0,0,0.11);
-    transform: translateY(-2px);
+    background: var(--cyan-dark);
+    color: #ffffff;
+    border-color: var(--cyan-dark);
 }
 
 .ig-svg { width: 20px; height: 20px; flex-shrink: 0; }

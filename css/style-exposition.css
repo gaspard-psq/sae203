@@ -11,8 +11,9 @@
 }
 
 .salle-card {
-    background-color: var(--cyan-medium);
-    border-radius: 18px;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 0;
     padding: 56px 32px;
     text-align: center;
     display: flex;
@@ -38,19 +39,19 @@
     display: inline-block;
     background-color: var(--bg-light);
     color: var(--text-dark);
-    border: none;
+    border: 2px solid #000000;
     padding: 12px 28px;
-    border-radius: 30px;
+    border-radius: 0;
     font-size: 14px;
     font-weight: 600;
     text-decoration: none;
     margin-top: 10px;
-    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 .btn-salle:hover {
-    transform: translateY(-3px) scale(1.04);
-    box-shadow: 0 8px 22px rgba(0, 187, 170, 0.28);
+    background-color: #000000;
+    color: #ffffff;
 }
 
 @media (max-width: 600px) {
