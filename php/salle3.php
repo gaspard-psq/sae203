@@ -2,7 +2,7 @@
 
 <section class="intro-section">
     <h1 class="pixel-title">Salle 3<span class="red-dot">.</span></h1>
-    <p>La salle 3 est le fruit du travail d'un groupe de <strong>12 étudiants</strong> qui ont conçu et réalisé leurs œuvres entièrement de A à Z — de l'idée initiale jusqu'à l'installation finale.</p>
+    <p>La salle 3 est le fruit du travail d'un groupe de <strong>12 étudiants</strong> qui ont conçu et réalisé leurs œuvres entièrement de A à Z de l'idée initiale jusqu'à l'installation finale.</p>
 </section>
 
 <div class="works-list">
