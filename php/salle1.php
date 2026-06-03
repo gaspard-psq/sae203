@@ -20,6 +20,10 @@
     </div>
 </div>
 
+<div class="salle-nav-next">
+    <a href="salle2.php" class="btn-salle-nav">Passer à la salle suivante →</a>
+</div>
+
 <?php include('carousel_salles.php'); ?>
 
 <?php include('footer.php'); ?>

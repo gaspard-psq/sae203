@@ -29,6 +29,10 @@ En bout de course, l'image devient grave : pénibilité du travail, insalubrité
     </div>
 </div>
 
+<div class="salle-nav-next">
+    <a href="salle4.php" class="btn-salle-nav">Passer à la salle suivante →</a>
+</div>
+
 <?php include('carousel_salles.php'); ?>
 
 <?php include('footer.php'); ?>

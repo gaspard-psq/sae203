@@ -60,6 +60,10 @@ Cela symbolise la manière dont chaque camp d’un conflit possède une vision p
     </div>
 </div>
 
+<div class="salle-nav-next">
+    <a href="exposition.php" class="btn-salle-nav">← Retour à l'exposition</a>
+</div>
+
 <?php include('carousel_salles.php'); ?>
 
 <?php include('footer.php'); ?>

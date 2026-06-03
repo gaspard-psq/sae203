@@ -165,7 +165,7 @@ include('header.php');
                 </div>
                 <div class="input-group">
                     <label for="email">Adresse e-mail <span class="red-dot">*</span></label>
-                    <input type="email" id="email" name="email" placeholder="lucas.dupont@etu.univ-smb.fr" required>
+                    <input type="email" id="email" name="email" placeholder="lucas.dupont@gmail.com" required>
                 </div>
             </div>
 
