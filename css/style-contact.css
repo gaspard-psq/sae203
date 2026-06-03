@@ -17,14 +17,18 @@ body {
     gap: 24px;
     max-width: 850px;
     margin: 0 auto 0 auto;
+    align-items: start;
+}
+
+/* La colonne droite s'étire à la hauteur de la colonne gauche
+   pour que sticky soit contraint exactement au bas du formulaire */
+.contact-info {
+    align-self: stretch;
 }
 
 .contact-info-block {
     position: sticky;
     top: 84px;
-}
-
-.contact-info-block {
     background-color: #ffffff;
     border: 2px solid #000000;
     border-radius: 0;
