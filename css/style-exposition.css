@@ -1,6 +1,3 @@
-/* ==========================================================================
-   PAGE EXPOSITION — FOND
-   ========================================================================== */
 body {
     background-image: url('../img/fond_bleu_clair1.png');
     background-size: cover;
@@ -9,9 +6,6 @@ body {
     background-repeat: no-repeat;
 }
 
-/* ==========================================================================
-   PAGE EXPOSITION — GRILLE DES SALLES
-   ========================================================================== */
 .salles-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

@@ -2,7 +2,6 @@
 session_start();
 include('../php/config.php');
 
-// Si déjà connecté, rediriger vers le tableau
 if (!empty($_SESSION['admin_connecte'])) {
     header('Location: admin.php');
     exit;
@@ -19,7 +18,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $stmt->execute([$login]);
         $admin = $stmt->fetch(PDO::FETCH_ASSOC);
 
-        // password_verify compare le mot de passe saisi au hash stocké
         if ($admin && password_verify($password, $admin['password_hash'])) {
             $_SESSION['admin_connecte'] = true;
             $_SESSION['admin_login']    = $admin['login'];
@@ -32,7 +30,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $erreur = 'Veuillez remplir tous les champs.';
     }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -57,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <form method="POST" action="admin-login.php" class="admin-login-form">
 
             <?php if ($erreur): ?>
-            <div class="error-banner"><?php echo htmlspecialchars($erreur); ?></div>
+            <div class="error-banner"><?= htmlspecialchars($erreur) ?></div>
             <?php endif; ?>
 
             <div class="input-group">

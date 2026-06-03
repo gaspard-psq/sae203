@@ -6,13 +6,7 @@ body {
     background-repeat: no-repeat;
 }
 
-
-
-
-
-/* ==========================================================================
-   FORMULAIRE DE RÉSERVATION
-   ========================================================================== */
+/* formulaire */
 .form-wrapper-linear {
     max-width: 850px;
     margin: 0 auto 80px auto;
@@ -49,9 +43,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* ==========================================================================
-   CHAMPS TEXTUELS
-   ========================================================================== */
+/* champs texte */
 .input-group { margin-bottom: 25px; }
 
 .input-group label {
@@ -82,14 +74,8 @@ body {
     box-shadow: none;
 }
 
-/* ==========================================================================
-   BOUTONS RADIO (PROFIL)
-   ========================================================================== */
-.radio-group-horizontal {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
-}
+/* boutons radio */
+.radio-group-horizontal { display: flex; flex-wrap: wrap; gap: 30px; }
 
 .custom-radio {
     display: flex;
@@ -101,11 +87,7 @@ body {
     user-select: none;
 }
 
-.custom-radio input {
-    position: absolute;
-    opacity: 0;
-    cursor: pointer;
-}
+.custom-radio input { position: absolute; opacity: 0; cursor: pointer; }
 
 .radio-mark {
     position: absolute;
@@ -134,9 +116,7 @@ body {
 
 .custom-radio input:checked ~ .radio-mark:after { display: block; }
 
-/* ==========================================================================
-   CASES À COCHER
-   ========================================================================== */
+/* cases à cocher */
 .custom-checkbox {
     display: flex;
     align-items: flex-start;
@@ -146,11 +126,7 @@ body {
     font-size: 16px;
 }
 
-.custom-checkbox input {
-    position: absolute;
-    opacity: 0;
-    width: 0; height: 0;
-}
+.custom-checkbox input { position: absolute; opacity: 0; width: 0; height: 0; }
 
 .checkmark {
     position: absolute;
@@ -179,14 +155,8 @@ body {
 
 .custom-checkbox input:checked ~ .checkmark:after { display: block; }
 
-/* ==========================================================================
-   ACCORDÉONS SALLES
-   ========================================================================== */
-.salles-accordion-list {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+/* accordéons salles */
+.salles-accordion-list { display: flex; flex-direction: column; gap: 15px; }
 
 .salle-accordion {
     background-color: #ffffff;
@@ -196,9 +166,7 @@ body {
     transition: border-color 0.2s ease;
 }
 
-.salle-accordion[open] {
-    border-color: var(--cyan-dark);
-}
+.salle-accordion[open] { border-color: var(--cyan-dark); }
 
 .salle-summary {
     display: flex;
@@ -212,13 +180,7 @@ body {
 .salle-summary::-webkit-details-marker { display: none; }
 
 .salle-summary-text { flex-grow: 1; }
-
-.salle-summary-text h4 {
-    margin: 0 0 4px 0;
-    font-size: 18px;
-    color: var(--text-dark);
-}
-
+.salle-summary-text h4 { margin: 0 0 4px 0; font-size: 18px; color: var(--text-dark); }
 .salle-summary-text small { color: #666; font-size: 13px; }
 
 .accordion-arrow {
@@ -235,27 +197,13 @@ body {
     border-top: 1px solid #000000;
 }
 
-/* ==========================================================================
-   SÉLECTEUR DE JOUR
-   ========================================================================== */
+/* sélecteur de jour */
 .jour-selector { margin-bottom: 20px; }
-
-.jour-selector > p {
-    font-weight: bold;
-    margin-bottom: 12px;
-    font-size: 14px;
-    color: #333;
-}
-
+.jour-selector > p { font-weight: bold; margin-bottom: 12px; font-size: 14px; color: #333; }
 .jour-toggle-group { display: flex; gap: 12px; flex-wrap: wrap; }
-
 .jour-toggle-btn { cursor: pointer; display: block; }
 
-.jour-toggle-btn input[type="radio"] {
-    position: absolute;
-    opacity: 0;
-    width: 0; height: 0;
-}
+.jour-toggle-btn input[type="radio"] { position: absolute; opacity: 0; width: 0; height: 0; }
 
 .jour-toggle-btn span {
     display: inline-block;
@@ -271,9 +219,7 @@ body {
     cursor: pointer;
 }
 
-.jour-toggle-btn:hover span {
-    background-color: var(--bg-light);
-}
+.jour-toggle-btn:hover span { background-color: var(--bg-light); }
 
 .jour-toggle-btn input:checked + span {
     background-color: var(--cyan-dark);
@@ -281,9 +227,7 @@ body {
     color: #ffffff;
 }
 
-/* ==========================================================================
-   BADGES CRÉNEAUX HORAIRES
-   ========================================================================== */
+/* badges créneaux */
 .horaires-badges-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
@@ -292,11 +236,7 @@ body {
 
 .horaire-badge-item { position: relative; cursor: pointer; }
 
-.horaire-badge-item input {
-    position: absolute;
-    opacity: 0;
-    width: 0; height: 0;
-}
+.horaire-badge-item input { position: absolute; opacity: 0; width: 0; height: 0; }
 
 .badge-content {
     display: flex;
@@ -311,14 +251,10 @@ body {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.badge-time { font-size: 14px; font-weight: bold; color: var(--text-dark); }
-
+.badge-time   { font-size: 14px; font-weight: bold; color: var(--text-dark); }
 .badge-places { font-size: 11px; color: #777; margin-top: 3px; }
 
-.horaire-badge-item:not(.is-disabled):hover .badge-content {
-    background-color: var(--bg-light);
-    cursor: pointer;
-}
+.horaire-badge-item:not(.is-disabled):hover .badge-content { background-color: var(--bg-light); cursor: pointer; }
 
 .horaire-badge-item.selected .badge-content {
     background-color: var(--cyan-dark);
@@ -329,25 +265,14 @@ body {
 .horaire-badge-item.selected .badge-places { color: #ffffff; }
 
 .horaire-badge-item.is-disabled { cursor: not-allowed; opacity: 0.4; }
+.horaire-badge-item.is-disabled .badge-content { background-color: #f0f0f0; border-color: #ddd; cursor: not-allowed; }
 
-.horaire-badge-item.is-disabled .badge-content {
-    background-color: #f0f0f0;
-    border-color: #ddd;
-    cursor: not-allowed;
-}
-
-.nb-personnes-zone {
-    padding-top: 16px;
-    border-top: 1px solid #000000;
-}
+.nb-personnes-zone { padding-top: 16px; border-top: 1px solid #000000; }
 
 .jauge-info-txt { display: block; margin-top: 6px; color: #888; font-size: 13px; }
+.creneaux-hint  { color: #aaa; font-style: italic; font-size: 14px; margin: 0; }
 
-.creneaux-hint { color: #aaa; font-style: italic; font-size: 14px; margin: 0; }
-
-/* ==========================================================================
-   PIED DE FORMULAIRE
-   ========================================================================== */
+/* pied de formulaire */
 .form-footer-linear { text-align: center; padding-top: 20px; }
 
 .btn-submit-large {

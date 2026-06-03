@@ -2,7 +2,6 @@
 session_start();
 include('../php/config.php');
 
-// Sécurité : accès réservé aux admins connectés
 if (empty($_SESSION['admin_connecte'])) {
     header('Location: admin-login.php');
     exit;
@@ -11,17 +10,12 @@ if (empty($_SESSION['admin_connecte'])) {
 $message = '';
 $msgType = '';
 
-// ============================================================
-// TRAITEMENT DES ACTIONS (modification / suppression)
-// ============================================================
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-    // --- SUPPRESSION ---
-    if (isset($_POST['action']) && $_POST['action'] === 'supprimer') {
+    if ($_POST['action'] === 'supprimer') {
         $id_inscription = (int)$_POST['id_inscription'];
         try {
             $db->beginTransaction();
-            // On récupère le créneau et le nb pour rendre les places
             $stmt = $db->prepare("SELECT id_creneau, nb_personnes FROM inscription WHERE id_inscription = ?");
             $stmt->execute([$id_inscription]);
             $insc = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -41,8 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         }
     }
 
-    // --- MODIFICATION ---
-    if (isset($_POST['action']) && $_POST['action'] === 'modifier') {
+    if ($_POST['action'] === 'modifier') {
         $id_inscription = (int)$_POST['id_inscription'];
         $nom            = trim($_POST['nom'] ?? '');
         $prenom         = trim($_POST['prenom'] ?? '');
@@ -53,7 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         try {
             $db->beginTransaction();
-            // Ancien nb pour ajuster les places du créneau
             $stmt = $db->prepare("SELECT nb_personnes FROM inscription WHERE id_inscription = ?");
             $stmt->execute([$id_inscription]);
             $ancien = $stmt->fetch(PDO::FETCH_ASSOC);
@@ -81,9 +73,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// ============================================================
-// RÉCUPÉRATION DE TOUTES LES RÉSERVATIONS
-// ============================================================
 $reservations = $db->query("
     SELECT i.*, c.date, c.heure_debut, s.nom AS salle_nom, cat.libelle AS categorie
     FROM inscription i
@@ -93,12 +82,9 @@ $reservations = $db->query("
     ORDER BY c.date, c.heure_debut, s.nom
 ")->fetchAll(PDO::FETCH_ASSOC);
 
-// Statistiques rapides
-$total_resa  = count($reservations);
-$total_pers  = array_sum(array_column($reservations, 'nb_personnes'));
-$total_buffet = 0;
-foreach ($reservations as $r) { if ($r['buffet']) $total_buffet++; }
-
+$total_resa   = count($reservations);
+$total_pers   = array_sum(array_column($reservations, 'nb_personnes'));
+$total_buffet = count(array_filter($reservations, fn($r) => $r['buffet']));
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -116,31 +102,29 @@ foreach ($reservations as $r) { if ($r['buffet']) $total_buffet++; }
 <div class="container">
     <section class="intro-section">
         <h1 class="pixel-title">Administration<span class="red-dot">.</span></h1>
-        <p>Connecté en tant que <strong><?php echo htmlspecialchars($_SESSION['admin_login']); ?></strong> —
+        <p>Connecté en tant que <strong><?= htmlspecialchars($_SESSION['admin_login']) ?></strong> —
            <a href="admin-logout.php" class="admin-logout-link">Se déconnecter</a></p>
     </section>
 
     <?php if ($message): ?>
-    <div class="admin-alert admin-alert-<?php echo $msgType; ?>"><?php echo htmlspecialchars($message); ?></div>
+    <div class="admin-alert admin-alert-<?= $msgType ?>"><?= htmlspecialchars($message) ?></div>
     <?php endif; ?>
 
-    <!-- Statistiques -->
     <div class="admin-stats">
         <div class="admin-stat-card">
-            <span class="admin-stat-nb"><?php echo $total_resa; ?></span>
+            <span class="admin-stat-nb"><?= $total_resa ?></span>
             <span class="admin-stat-label">Réservations</span>
         </div>
         <div class="admin-stat-card">
-            <span class="admin-stat-nb"><?php echo $total_pers; ?></span>
+            <span class="admin-stat-nb"><?= $total_pers ?></span>
             <span class="admin-stat-label">Personnes</span>
         </div>
         <div class="admin-stat-card">
-            <span class="admin-stat-nb"><?php echo $total_buffet; ?></span>
+            <span class="admin-stat-nb"><?= $total_buffet ?></span>
             <span class="admin-stat-label">Buffet</span>
         </div>
     </div>
 
-    <!-- Tableau des réservations -->
     <div class="admin-table-wrapper">
         <table class="admin-table">
             <thead>
@@ -168,27 +152,27 @@ foreach ($reservations as $r) { if ($r['buffet']) $total_buffet++; }
                     <tr>
                         <form method="POST" action="admin.php">
                             <input type="hidden" name="action" value="modifier">
-                            <input type="hidden" name="id_inscription" value="<?php echo $r['id_inscription']; ?>">
-                            <input type="hidden" name="id_creneau" value="<?php echo $r['id_creneau']; ?>">
+                            <input type="hidden" name="id_inscription" value="<?= $r['id_inscription'] ?>">
+                            <input type="hidden" name="id_creneau" value="<?= $r['id_creneau'] ?>">
 
-                            <td><?php echo $r['id_inscription']; ?></td>
-                            <td><input type="text"  name="nom"    value="<?php echo htmlspecialchars($r['nom']); ?>" class="admin-input"></td>
-                            <td><input type="text"  name="prenom" value="<?php echo htmlspecialchars($r['prenom']); ?>" class="admin-input"></td>
-                            <td><input type="email" name="email"  value="<?php echo htmlspecialchars($r['email']); ?>" class="admin-input admin-input-wide"></td>
-                            <td><?php echo htmlspecialchars($r['salle_nom']); ?></td>
-                            <td><?php echo date('d/m/Y', strtotime($r['date'])); ?></td>
-                            <td><?php echo $heure; ?></td>
-                            <td><?php echo htmlspecialchars($r['categorie']); ?></td>
-                            <td><input type="number" name="nb_personnes" value="<?php echo $r['nb_personnes']; ?>" min="1" class="admin-input admin-input-nb"></td>
+                            <td><?= $r['id_inscription'] ?></td>
+                            <td><input type="text"  name="nom"    value="<?= htmlspecialchars($r['nom']) ?>" class="admin-input"></td>
+                            <td><input type="text"  name="prenom" value="<?= htmlspecialchars($r['prenom']) ?>" class="admin-input"></td>
+                            <td><input type="email" name="email"  value="<?= htmlspecialchars($r['email']) ?>" class="admin-input admin-input-wide"></td>
+                            <td><?= htmlspecialchars($r['salle_nom']) ?></td>
+                            <td><?= date('d/m/Y', strtotime($r['date'])) ?></td>
+                            <td><?= $heure ?></td>
+                            <td><?= htmlspecialchars($r['categorie']) ?></td>
+                            <td><input type="number" name="nb_personnes" value="<?= $r['nb_personnes'] ?>" min="1" class="admin-input admin-input-nb"></td>
                             <td style="text-align:center">
-                                <input type="checkbox" name="buffet" value="1" <?php echo $r['buffet'] ? 'checked' : ''; ?>>
+                                <input type="checkbox" name="buffet" value="1" <?= $r['buffet'] ? 'checked' : '' ?>>
                             </td>
                             <td class="admin-actions">
                                 <button type="submit" class="admin-btn admin-btn-save" title="Enregistrer">💾</button>
                         </form>
                         <form method="POST" action="admin.php" onsubmit="return confirm('Supprimer cette réservation ?');" style="display:inline">
                             <input type="hidden" name="action" value="supprimer">
-                            <input type="hidden" name="id_inscription" value="<?php echo $r['id_inscription']; ?>">
+                            <input type="hidden" name="id_inscription" value="<?= $r['id_inscription'] ?>">
                             <button type="submit" class="admin-btn admin-btn-delete" title="Supprimer">🗑️</button>
                         </form>
                             </td>

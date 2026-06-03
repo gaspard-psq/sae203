@@ -6,13 +6,8 @@ body {
     background-repeat: no-repeat;
 }
 
-/* ==========================================================================
-   PAGE ADMIN — CONNEXION
-   ========================================================================== */
-.admin-login-wrapper {
-    max-width: 450px;
-    margin: 0 auto 80px;
-}
+/* connexion */
+.admin-login-wrapper { max-width: 450px; margin: 0 auto 80px; }
 
 .admin-login-form {
     background-color: #ffffff;
@@ -31,17 +26,10 @@ body {
     font-size: 14px;
 }
 
-.admin-logout-link {
-    color: var(--accent-red);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.2s ease;
-}
+.admin-logout-link { color: var(--accent-red); text-decoration: none; font-weight: bold; transition: color 0.2s ease; }
 .admin-logout-link:hover { color: #000000; }
 
-/* ==========================================================================
-   STATISTIQUES
-   ========================================================================== */
+/* stats */
 .admin-stats {
     display: flex;
     justify-content: center;
@@ -79,9 +67,7 @@ body {
     color: #555;
 }
 
-/* ==========================================================================
-   ALERTES ADMIN
-   ========================================================================== */
+/* alertes */
 .admin-alert {
     max-width: 1100px;
     margin: 0 auto 24px;
@@ -90,20 +76,11 @@ body {
     font-weight: bold;
     font-size: 14px;
 }
-.admin-alert-success {
-    background-color: #e6fcf9;
-    color: #007d72;
-    border-left: 4px solid var(--cyan-dark);
-}
-.admin-alert-danger {
-    background-color: #ffebeb;
-    color: #af0000;
-    border-left: 4px solid #af0000;
-}
 
-/* ==========================================================================
-   TABLEAU ADMIN
-   ========================================================================== */
+.admin-alert-success { background-color: #e6fcf9; color: #007d72; border-left: 4px solid var(--cyan-dark); }
+.admin-alert-danger  { background-color: #ffebeb; color: #af0000; border-left: 4px solid #af0000; }
+
+/* tableau */
 .admin-table-wrapper {
     max-width: 1200px;
     margin: 0 auto 80px;
@@ -119,10 +96,7 @@ body {
     background: #fff;
 }
 
-.admin-table thead {
-    background-color: var(--cyan-dark);
-    color: #fff;
-}
+.admin-table thead { background-color: var(--cyan-dark); color: #fff; }
 
 .admin-table th {
     padding: 14px 10px;
@@ -133,15 +107,8 @@ body {
     white-space: nowrap;
 }
 
-.admin-table td {
-    padding: 8px 10px;
-    border-bottom: 1px solid #eee;
-    vertical-align: middle;
-}
-
-.admin-table tbody tr:hover {
-    background-color: rgba(0,187,170,0.04);
-}
+.admin-table td { padding: 8px 10px; border-bottom: 1px solid #eee; vertical-align: middle; }
+.admin-table tbody tr:hover { background-color: rgba(0, 187, 170, 0.04); }
 
 .admin-input {
     width: 100px;
@@ -153,17 +120,12 @@ body {
     transition: border-color 0.2s;
 }
 
-.admin-input:focus {
-    outline: none;
-    border-color: var(--cyan-dark);
-}
+.admin-input:focus { outline: none; border-color: var(--cyan-dark); }
 
 .admin-input-wide { width: 180px; }
 .admin-input-nb   { width: 55px; }
 
-.admin-actions {
-    white-space: nowrap;
-}
+.admin-actions { white-space: nowrap; }
 
 .admin-btn {
     border: none;
@@ -175,10 +137,10 @@ body {
     transition: background-color 0.2s ease;
 }
 
-.admin-btn-save:hover   { background: rgba(0,187,170,0.15); }
-.admin-btn-delete:hover { background: rgba(175,0,0,0.12); }
+.admin-btn-save:hover   { background: rgba(0, 187, 170, 0.15); }
+.admin-btn-delete:hover { background: rgba(175, 0, 0, 0.12); }
 
 @media (max-width: 700px) {
     .admin-stat-card { padding: 18px 24px; }
-    .admin-stat-nb { font-size: 32px; }
+    .admin-stat-nb   { font-size: 32px; }
 }

@@ -1,4 +1,7 @@
-<?php $page_styles = ['style-index.css', 'style-carousel.css']; include('header.php'); ?>
+<?php
+$page_styles = ['style-index.css', 'style-carousel.css'];
+include('header.php');
+?>
 
 <!-- HERO -->
 <section class="hero">
@@ -15,9 +18,9 @@
     <h2 class="section-title">Bienvenue sur le site de l'exposition E-llusion !</h2>
     <div class="intro-divider"></div>
     <p class="intro-text">
-Cette exposition a été imaginée et créée de toutes pièces par des étudiants en première année de BUT MMI (Métiers du multimédia et de l'internet).
-<br><br>
-Le thème de l'exposition ? E-llusion, venez la découvrir à travers un parcours réparti en 4 salles où vous attendent 12 œuvres originales (3 ou 4 œuvres par salle) qui explorent le numérique et les faux-semblants.
+        Cette exposition a été imaginée et créée de toutes pièces par des étudiants en première année de BUT MMI (Métiers du multimédia et de l'internet).
+        <br><br>
+        Le thème de l'exposition ? E-llusion, venez la découvrir à travers un parcours réparti en 4 salles où vous attendent 12 œuvres originales (3 ou 4 œuvres par salle) qui explorent le numérique et les faux-semblants.
     </p>
     <a href="exposition.php" class="btn-secondary">En savoir plus</a>
 </section>
@@ -48,6 +51,7 @@ Le thème de l'exposition ? E-llusion, venez la découvrir à travers un parcour
 <!-- AFFICHE -->
 <section class="affiche-section">
     <div class="affiche-inner">
+
         <div class="affiche-texte">
             <h2 class="section-title" style="text-align:left">L'affiche de l'exposition</h2>
             <div class="intro-divider" style="margin:14px 0 24px"></div>
@@ -61,13 +65,14 @@ Le thème de l'exposition ? E-llusion, venez la découvrir à travers un parcour
                 C'est à partir de la charte graphique de cette création que nous avons ensuite développé l'identité visuelle et l'interface de ce site web.
             </p>
         </div>
+
         <div class="affiche-visuel">
             <img src="../img/affiche.jpg" alt="Affiche de l'exposition E-LLUSION" class="affiche-img">
         </div>
+
     </div>
 </section>
 
-<!-- CAROUSEL SALLES -->
 <?php include('carousel_salles.php'); ?>
 
 <?php include('footer.php'); ?>

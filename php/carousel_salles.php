@@ -1,3 +1,12 @@
+<?php
+$salles = [
+    ['num' => 'Salle 021', 'titre' => 'Salle n°1', 'nom' => 'Societ-e',         'lien' => 'salle1.php'],
+    ['num' => 'Salle 005', 'titre' => 'Salle n°2', 'nom' => 'Horizon',           'lien' => 'salle2.php'],
+    ['num' => 'Salle 002', 'titre' => 'Salle n°3', 'nom' => "L'envers du Décor", 'lien' => 'salle3.php'],
+    ['num' => 'Salle 001', 'titre' => 'Salle n°4', 'nom' => 'La pépinière',      'lien' => 'salle4.php'],
+];
+?>
+
 <section class="carousel-section">
     <h2 class="section-title">Découvrez les salles</h2>
     <div class="intro-divider"></div>
@@ -7,55 +16,19 @@
 
         <div class="carousel-track-container">
             <div class="carousel-track" id="carouselTrack">
-
+                <?php foreach ($salles as $i => $salle): ?>
                 <div class="carousel-slide">
-                    <div class="slide-bg slide-bg-1">
+                    <div class="slide-bg slide-bg-<?= $i + 1 ?>">
                         <div class="slide-overlay"></div>
                         <div class="slide-content">
-                            <span class="slide-num">Salle 021</span>
-                            <h3>Salle n°1</h3>
-                            <p>Societ-e</p>
-                            <a href="salle1.php" class="btn-slide">Découvrir</a>
+                            <span class="slide-num"><?= $salle['num'] ?></span>
+                            <h3><?= $salle['titre'] ?></h3>
+                            <p><?= $salle['nom'] ?></p>
+                            <a href="<?= $salle['lien'] ?>" class="btn-slide">Découvrir</a>
                         </div>
                     </div>
                 </div>
-
-                <div class="carousel-slide">
-                    <div class="slide-bg slide-bg-2">
-                        <div class="slide-overlay"></div>
-                        <div class="slide-content">
-                            <span class="slide-num">Salle 005</span>
-                            <h3>Salle n°2</h3>
-                            <p>Horizon</p>
-                            <a href="salle2.php" class="btn-slide">Découvrir</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-slide">
-                    <div class="slide-bg slide-bg-3">
-                        <div class="slide-overlay"></div>
-                        <div class="slide-content">
-                            <span class="slide-num">Salle 002</span>
-                            <h3>Salle n°3</h3>
-                            <p>L'envers du Décor</p>
-                            <a href="salle3.php" class="btn-slide">Découvrir</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="carousel-slide">
-                    <div class="slide-bg slide-bg-4">
-                        <div class="slide-overlay"></div>
-                        <div class="slide-content">
-                            <span class="slide-num">Salle 001</span>
-                            <h3>Salle n°4</h3>
-                            <p>La pépinière</p>
-                            <a href="salle4.php" class="btn-slide">Découvrir</a>
-                        </div>
-                    </div>
-                </div>
-
+                <?php endforeach; ?>
             </div>
         </div>
 
@@ -63,10 +36,9 @@
     </div>
 
     <div class="carousel-dots" id="carouselDots">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-        <span class="dot" data-index="3"></span>
+        <?php foreach ($salles as $i => $salle): ?>
+        <span class="dot <?= $i === 0 ? 'active' : '' ?>" data-index="<?= $i ?>"></span>
+        <?php endforeach; ?>
     </div>
 </section>
 
@@ -87,5 +59,6 @@ document.getElementById('prevBtn').addEventListener('click', () => goTo(current 
 document.getElementById('nextBtn').addEventListener('click', () => goTo(current + 1));
 dots.forEach(dot => dot.addEventListener('click', () => goTo(+dot.dataset.index)));
 
+// avance automatiquement toutes les 4 secondes
 setInterval(() => goTo(current + 1), 4000);
 </script>

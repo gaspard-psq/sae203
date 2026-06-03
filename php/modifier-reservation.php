@@ -12,7 +12,7 @@ function formaterDateFr($date) {
     $jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
     $mois  = ['','janvier','fevrier','mars','avril','mai','juin','juillet','aout','septembre','octobre','novembre','decembre'];
     $ts = strtotime($date);
-    return $jours[date('w',$ts)] . ' ' . date('j',$ts) . ' ' . $mois[(int)date('n',$ts)] . ' ' . date('Y',$ts);
+    return $jours[date('w', $ts)] . ' ' . date('j', $ts) . ' ' . $mois[(int)date('n', $ts)] . ' ' . date('Y', $ts);
 }
 
 $modifie = false;
@@ -50,7 +50,6 @@ if (!$inscription) {
     exit;
 }
 
-// Traitement de la modification
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $nouveau_id = (int)($_POST['nouveau_id_creneau'] ?? 0);
     $nouveau_nb = (int)($_POST['nb_personnes'] ?? 1);
@@ -104,12 +103,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-// Récupérer tous les créneaux de cette salle
 $stmtCreneaux = $db->prepare("SELECT * FROM creneau WHERE id_salle = ? ORDER BY date, heure_debut");
 $stmtCreneaux->execute([$inscription['id_salle']]);
 $creneaux_salle = $stmtCreneaux->fetchAll(PDO::FETCH_ASSOC);
 
-// Ajuster l'affichage des places (remettre les places du créneau actuel)
+// on réaffiche les places du créneau actuel comme si l'utilisateur ne l'occupait pas encore
 foreach ($creneaux_salle as &$c) {
     $c['places_display'] = ($c['id_creneau'] == $inscription['id_creneau'])
         ? $c['places_restantes'] + (int)$inscription['nb_personnes']
@@ -124,7 +122,7 @@ include('header.php');
 <div class="container">
     <section class="intro-section">
         <h1 class="pixel-title">Modifier<span class="red-dot">.</span></h1>
-        <p>Modifiez votre créneau pour la salle <strong><?php echo htmlspecialchars($inscription['salle_nom']); ?></strong>.</p>
+        <p>Modifiez votre créneau pour la salle <strong><?= htmlspecialchars($inscription['salle_nom']) ?></strong>.</p>
     </section>
 
     <div class="form-wrapper-linear">
@@ -138,28 +136,28 @@ include('header.php');
         <?php endif; ?>
 
         <?php if ($erreur): ?>
-        <div class="error-banner"><?php echo htmlspecialchars($erreur); ?></div>
+        <div class="error-banner"><?= htmlspecialchars($erreur) ?></div>
         <?php endif; ?>
 
         <div class="form-section-linear">
             <h3><span class="section-icon">01</span> Créneau actuel</h3>
             <div class="creneau-actuel-block">
                 <div class="creneau-actuel-heure">
-                    <?php echo date('H\hi', strtotime($inscription['heure_debut'])); ?>
+                    <?= date('H\hi', strtotime($inscription['heure_debut'])) ?>
                     <span class="sep">–</span>
-                    <?php echo date('H\hi', strtotime($inscription['heure_debut'] . ' +30 minutes')); ?>
+                    <?= date('H\hi', strtotime($inscription['heure_debut'] . ' +30 minutes')) ?>
                 </div>
                 <div class="creneau-actuel-details">
-                    <strong><?php echo htmlspecialchars($inscription['salle_nom']); ?></strong>
-                    <span><?php echo formaterDateFr($inscription['date']); ?></span>
-                    <span><?php echo $inscription['nb_personnes']; ?> personne(s)</span>
+                    <strong><?= htmlspecialchars($inscription['salle_nom']) ?></strong>
+                    <span><?= formaterDateFr($inscription['date']) ?></span>
+                    <span><?= $inscription['nb_personnes'] ?> personne(s)</span>
                 </div>
             </div>
         </div>
 
-        <form method="POST" action="modifier-reservation.php?token=<?php echo urlencode($token); ?>">
-            <input type="hidden" name="token" value="<?php echo htmlspecialchars($token); ?>">
-            <input type="hidden" name="nouveau_id_creneau" id="nouveau_id_creneau" value="<?php echo $inscription['id_creneau']; ?>">
+        <form method="POST" action="modifier-reservation.php?token=<?= urlencode($token) ?>">
+            <input type="hidden" name="token" value="<?= htmlspecialchars($token) ?>">
+            <input type="hidden" name="nouveau_id_creneau" id="nouveau_id_creneau" value="<?= $inscription['id_creneau'] ?>">
 
             <div class="form-section-linear">
                 <h3><span class="section-icon">02</span> Choisir un autre créneau</h3>
@@ -174,12 +172,12 @@ include('header.php');
                         if ($actuel) $classes .= ' selected';
                         if ($plein)  $classes .= ' is-disabled';
                     ?>
-                    <label class="<?php echo $classes; ?>"
-                           data-id-creneau="<?php echo $c['id_creneau']; ?>"
-                           data-places="<?php echo $places; ?>">
+                    <label class="<?= $classes ?>"
+                           data-id-creneau="<?= $c['id_creneau'] ?>"
+                           data-places="<?= $places ?>">
                         <span class="badge-content">
-                            <span class="badge-time"><?php echo $heure; ?></span>
-                            <span class="badge-places"><?php echo $places; ?> pl. rest.</span>
+                            <span class="badge-time"><?= $heure ?></span>
+                            <span class="badge-places"><?= $places ?> pl. rest.</span>
                             <?php if ($actuel): ?>
                             <span class="badge-actuel-tag">actuel</span>
                             <?php endif; ?>
@@ -194,8 +192,8 @@ include('header.php');
                 <div class="input-group" style="max-width:260px">
                     <label for="nb_personnes">Nombre de personnes <span class="red-dot">*</span></label>
                     <input type="number" id="nb_personnes" name="nb_personnes"
-                           min="1" max="<?php echo $inscription['capacite_max']; ?>"
-                           value="<?php echo $inscription['nb_personnes']; ?>">
+                           min="1" max="<?= $inscription['capacite_max'] ?>"
+                           value="<?= $inscription['nb_personnes'] ?>">
                     <small id="jauge-modifier" class="jauge-info-txt"></small>
                 </div>
             </div>
@@ -209,15 +207,15 @@ include('header.php');
 </div>
 
 <script>
-var nbInput  = document.getElementById('nb_personnes');
-var hiddenId = document.getElementById('nouveau_id_creneau');
+const nbInput  = document.getElementById('nb_personnes');
+const hiddenId = document.getElementById('nouveau_id_creneau');
 
-document.querySelectorAll('.modifier-badge:not(.is-disabled)').forEach(function(badge) {
+document.querySelectorAll('.modifier-badge:not(.is-disabled)').forEach(badge => {
     badge.addEventListener('click', function() {
-        document.querySelectorAll('.modifier-badge').forEach(function(b) { b.classList.remove('selected'); });
+        document.querySelectorAll('.modifier-badge').forEach(b => b.classList.remove('selected'));
         this.classList.add('selected');
         hiddenId.value = this.dataset.idCreneau;
-        var places = parseInt(this.dataset.places);
+        const places = parseInt(this.dataset.places);
         nbInput.max = places;
         if (parseInt(nbInput.value) > places) nbInput.value = places;
         document.getElementById('jauge-modifier').textContent = places + ' place(s) disponible(s) sur ce creneau.';

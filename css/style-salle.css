@@ -1,6 +1,4 @@
-/* ==========================================================================
-   PAGES SALLE — LISTE DES ŒUVRES
-   ========================================================================== */
+/* liste des œuvres */
 .works-list {
     max-width: 100%;
     margin: 0;
@@ -15,16 +13,8 @@
     padding: 50px 80px;
 }
 
-.work-item:nth-child(odd) {
-    background-color: var(--bg-light);
-    flex-direction: row;
-}
-
-.work-item:nth-child(even) {
-    background-color: var(--cyan-medium);
-    color: var(--text-dark);
-    flex-direction: row-reverse;
-}
+.work-item:nth-child(odd)  { background-color: var(--bg-light);    flex-direction: row; }
+.work-item:nth-child(even) { background-color: var(--cyan-medium); flex-direction: row-reverse; color: var(--text-dark); }
 
 .work-img-placeholder {
     background-color: #ffffff;
@@ -39,9 +29,7 @@
     border-radius: 0;
 }
 
-/* ==========================================================================
-   NAVIGATION SALLE SUIVANTE
-   ========================================================================== */
+/* bouton salle suivante */
 .salle-nav-next {
     display: flex;
     justify-content: center;

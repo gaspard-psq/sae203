@@ -6,25 +6,18 @@ body {
     background-repeat: no-repeat;
 }
 
-
-
-/* ==========================================================================
-   PAGE CONTACT — LAYOUT 2 COLONNES
-   ========================================================================== */
+/* layout 2 colonnes */
 .contact-layout {
     display: grid;
     grid-template-columns: 1fr 260px;
     gap: 24px;
     max-width: 850px;
-    margin: 0 auto 0 auto;
+    margin: 0 auto;
     align-items: start;
 }
 
-/* La colonne droite s'étire à la hauteur de la colonne gauche
-   pour que sticky soit contraint exactement au bas du formulaire */
-.contact-info {
-    align-self: stretch;
-}
+/* align-self:stretch sur la colonne droite pour que sticky soit contraint au bas du formulaire */
+.contact-info { align-self: stretch; }
 
 .contact-info-block {
     position: sticky;
@@ -44,15 +37,8 @@ body {
     margin: 0 0 16px;
 }
 
-.contact-address {
-    font-style: normal;
-    font-size: 15px;
-    line-height: 1.7;
-    color: #333;
-    margin: 0 0 12px;
-}
-
-.contact-name { font-size: 15px; color: #333; margin: 0 0 20px; }
+.contact-address { font-style: normal; font-size: 15px; line-height: 1.7; color: #333; margin: 0 0 12px; }
+.contact-name    { font-size: 15px; color: #333; margin: 0 0 20px; }
 
 .contact-divider {
     width: 36px;
@@ -76,29 +62,19 @@ body {
     color: var(--text-dark);
     text-decoration: none;
     font-weight: 600;
-    border-bottom: 1px solid rgba(0,0,0,0.15);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
     padding-bottom: 2px;
     transition: color 0.2s, border-color 0.2s;
 }
 
-.contact-phone:hover {
-    color: var(--cyan-dark);
-    border-color: var(--cyan-dark);
-}
+.contact-phone:hover { color: var(--cyan-dark); border-color: var(--cyan-dark); }
 
 .contact-form-wrapper { min-width: 0; }
 
-/* ==========================================================================
-   CHAMPS — TEXTAREA
-   ========================================================================== */
+/* champs */
 .input-group { margin-bottom: 25px; }
 
-.input-group label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 10px;
-    color: #222222;
-}
+.input-group label { display: block; font-weight: bold; margin-bottom: 10px; color: #222222; }
 
 .input-group input[type="text"],
 .input-group input[type="email"],
@@ -114,11 +90,7 @@ body {
     transition: border-color 0.2s ease;
 }
 
-.input-group input:focus {
-    outline: none;
-    border-color: var(--cyan-dark);
-    box-shadow: none;
-}
+.input-group input:focus { outline: none; border-color: var(--cyan-dark); box-shadow: none; }
 
 .input-group textarea {
     width: 100%;
@@ -133,11 +105,7 @@ body {
     transition: border-color 0.2s ease;
 }
 
-.input-group textarea:focus {
-    outline: none;
-    border-color: var(--cyan-dark);
-    box-shadow: none;
-}
+.input-group textarea:focus { outline: none; border-color: var(--cyan-dark); box-shadow: none; }
 
 .form-section-linear {
     background-color: #ffffff;
@@ -183,12 +151,9 @@ body {
     transition: background-color 0.2s ease, color 0.2s ease;
 }
 
-.btn-submit-large:hover {
-    background-color: #ffffff;
-    color: var(--cyan-dark);
-}
+.btn-submit-large:hover { background-color: #ffffff; color: var(--cyan-dark); }
 
 @media (max-width: 700px) {
     .contact-layout { grid-template-columns: 1fr; }
-    .contact-info { position: static; }
+    .contact-info   { position: static; }
 }

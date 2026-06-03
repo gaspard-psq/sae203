@@ -13,7 +13,7 @@ function formaterDateFr($date) {
     $jours = ['Dimanche','Lundi','Mardi','Mercredi','Jeudi','Vendredi','Samedi'];
     $mois  = ['','janvier','fevrier','mars','avril','mai','juin','juillet','aout','septembre','octobre','novembre','decembre'];
     $ts = strtotime($date);
-    return $jours[date('w',$ts)] . ' ' . date('j',$ts) . ' ' . $mois[(int)date('n',$ts)] . ' ' . date('Y',$ts);
+    return $jours[date('w', $ts)] . ' ' . date('j', $ts) . ' ' . $mois[(int)date('n', $ts)] . ' ' . date('Y', $ts);
 }
 
 $ph   = implode(',', array_fill(0, count($tokens), '?'));
@@ -52,7 +52,7 @@ include('header.php');
         <div class="confirmation-success-banner">
             <div class="check-icon">✓</div>
             <h2>Réservation confirmée !</h2>
-            <p>Un e-mail de confirmation a été envoyé à <strong><?php echo htmlspecialchars($visiteur['email']); ?></strong></p>
+            <p>Un e-mail de confirmation a été envoyé à <strong><?= htmlspecialchars($visiteur['email']) ?></strong></p>
         </div>
 
         <div class="confirmation-card">
@@ -62,15 +62,15 @@ include('header.php');
             <div class="confirmation-info-grid">
                 <div class="info-item">
                     <span class="info-label">Nom complet</span>
-                    <span class="info-value"><?php echo htmlspecialchars($visiteur['prenom'] . ' ' . $visiteur['nom']); ?></span>
+                    <span class="info-value"><?= htmlspecialchars($visiteur['prenom'] . ' ' . $visiteur['nom']) ?></span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">E-mail</span>
-                    <span class="info-value"><?php echo htmlspecialchars($visiteur['email']); ?></span>
+                    <span class="info-value"><?= htmlspecialchars($visiteur['email']) ?></span>
                 </div>
                 <div class="info-item">
                     <span class="info-label">Profil</span>
-                    <span class="info-value"><?php echo htmlspecialchars($visiteur['categorie']); ?></span>
+                    <span class="info-value"><?= htmlspecialchars($visiteur['categorie']) ?></span>
                 </div>
                 <?php if ($visiteur['buffet']): ?>
                 <div class="info-item">
@@ -93,16 +93,16 @@ include('header.php');
                 ?>
                 <div class="creneau-confirm-item">
                     <div class="creneau-confirm-left">
-                        <div class="creneau-confirm-heure"><?php echo $heure_debut; ?></div>
+                        <div class="creneau-confirm-heure"><?= $heure_debut ?></div>
                         <div class="creneau-confirm-sep">–</div>
-                        <div class="creneau-confirm-heure fin"><?php echo $heure_fin; ?></div>
+                        <div class="creneau-confirm-heure fin"><?= $heure_fin ?></div>
                     </div>
                     <div class="creneau-confirm-info">
-                        <h4><?php echo htmlspecialchars($insc['salle_nom']); ?></h4>
-                        <p><?php echo $date_fr; ?></p>
-                        <p class="creneau-confirm-nb"><?php echo $insc['nb_personnes']; ?> personne(s)</p>
+                        <h4><?= htmlspecialchars($insc['salle_nom']) ?></h4>
+                        <p><?= $date_fr ?></p>
+                        <p class="creneau-confirm-nb"><?= $insc['nb_personnes'] ?> personne(s)</p>
                     </div>
-                    <a href="modifier-reservation.php?token=<?php echo urlencode($insc['token']); ?>" class="btn-modifier">
+                    <a href="modifier-reservation.php?token=<?= urlencode($insc['token']) ?>" class="btn-modifier">
                         Modifier
                     </a>
                 </div>

@@ -1,6 +1,3 @@
-/* ==========================================================================
-   CAROUSEL SALLES (partagé : accueil + pages salle)
-   ========================================================================== */
 .carousel-section {
     padding: 70px 20px 50px;
     text-align: center;
@@ -48,7 +45,7 @@
 .slide-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.65) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.65) 0%, transparent 60%);
 }
 
 .slide-content {
@@ -70,17 +67,8 @@
     margin-bottom: 6px;
 }
 
-.slide-content h3 {
-    font-size: 28px;
-    font-weight: 800;
-    margin: 0 0 6px;
-}
-
-.slide-content p {
-    font-size: 14px;
-    margin: 0 0 18px;
-    opacity: 0.85;
-}
+.slide-content h3 { font-size: 28px; font-weight: 800; margin: 0 0 6px; }
+.slide-content p  { font-size: 14px; margin: 0 0 18px; opacity: 0.85; }
 
 .btn-slide {
     display: inline-block;

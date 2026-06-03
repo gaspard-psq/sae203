@@ -1,13 +1,9 @@
-/* ==========================================================================
-   CONFIRMATION & MODIFICATION DE RÉSERVATION
-   ========================================================================== */
-
 .confirmation-wrapper {
     max-width: 850px;
     margin: 0 auto 80px auto;
 }
 
-/* --- Bannière de succès ------------------------------------------------- */
+/* bannière succès */
 .confirmation-success-banner {
     background-color: var(--cyan-dark);
     color: #ffffff;
@@ -29,23 +25,13 @@
     font-size: 30px;
     font-weight: 900;
     margin: 0 auto 20px auto;
-    border: 2px solid rgba(255,255,255,0.4);
+    border: 2px solid rgba(255, 255, 255, 0.4);
 }
 
-.confirmation-success-banner h2 {
-    margin: 0 0 10px 0;
-    font-size: 28px;
-    font-weight: 900;
-    color: #ffffff;
-}
+.confirmation-success-banner h2 { margin: 0 0 10px 0; font-size: 28px; font-weight: 900; color: #ffffff; }
+.confirmation-success-banner p  { margin: 0; font-size: 15px; color: rgba(255, 255, 255, 0.88); }
 
-.confirmation-success-banner p {
-    margin: 0;
-    font-size: 15px;
-    color: rgba(255, 255, 255, 0.88);
-}
-
-/* --- Cartes de confirmation ---------------------------------------------- */
+/* cartes */
 .confirmation-card {
     background-color: #ffffff;
     border: 2px solid #000000;
@@ -66,7 +52,6 @@
     border-bottom: 2px solid #000000;
 }
 
-/* --- Grille d'informations ---------------------------------------------- */
 .confirmation-info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -91,11 +76,7 @@
     color: #888;
 }
 
-.info-value {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--text-dark);
-}
+.info-value { font-size: 16px; font-weight: 600; color: var(--text-dark); }
 
 .info-tag-green {
     display: inline-block;
@@ -107,12 +88,8 @@
     font-weight: 700;
 }
 
-/* --- Liste de créneaux confirmés --------------------------------------- */
-.creneaux-confirm-list {
-    display: flex;
-    flex-direction: column;
-    gap: 14px;
-}
+/* liste de créneaux */
+.creneaux-confirm-list { display: flex; flex-direction: column; gap: 14px; }
 
 .creneau-confirm-item {
     background: #ffffff;
@@ -125,9 +102,7 @@
     transition: background-color 0.2s ease;
 }
 
-.creneau-confirm-item:hover {
-    background-color: #f9f9f9;
-}
+.creneau-confirm-item:hover { background-color: #f9f9f9; }
 
 .creneau-confirm-left {
     display: flex;
@@ -137,48 +112,16 @@
     text-align: center;
 }
 
-.creneau-confirm-heure {
-    font-size: 20px;
-    font-weight: 900;
-    color: var(--cyan-dark);
-    line-height: 1;
-}
+.creneau-confirm-heure { font-size: 20px; font-weight: 900; color: var(--cyan-dark); line-height: 1; }
+.creneau-confirm-heure.fin { font-size: 14px; color: #aaa; font-weight: 600; }
+.creneau-confirm-sep   { font-size: 13px; color: #ccc; margin: 3px 0; }
 
-.creneau-confirm-heure.fin {
-    font-size: 14px;
-    color: #aaa;
-    font-weight: 600;
-}
+.creneau-confirm-info { flex: 1; }
+.creneau-confirm-info h4 { margin: 0 0 4px 0; font-size: 17px; font-weight: 700; color: var(--text-dark); }
+.creneau-confirm-info p  { margin: 0 0 2px 0; font-size: 14px; color: #555; }
+.creneau-confirm-nb { color: #888 !important; font-size: 13px !important; }
 
-.creneau-confirm-sep {
-    font-size: 13px;
-    color: #ccc;
-    margin: 3px 0;
-}
-
-.creneau-confirm-info {
-    flex: 1;
-}
-
-.creneau-confirm-info h4 {
-    margin: 0 0 4px 0;
-    font-size: 17px;
-    font-weight: 700;
-    color: var(--text-dark);
-}
-
-.creneau-confirm-info p {
-    margin: 0 0 2px 0;
-    font-size: 14px;
-    color: #555;
-}
-
-.creneau-confirm-nb {
-    color: #888 !important;
-    font-size: 13px !important;
-}
-
-/* --- Bouton modifier ---------------------------------------------------- */
+/* bouton modifier */
 .btn-modifier {
     background: #ffffff;
     color: var(--text-dark);
@@ -199,7 +142,6 @@
     border-color: var(--cyan-dark);
 }
 
-/* --- Bouton secondaire -------------------------------------------------- */
 .btn-secondary {
     background: #ffffff;
     color: var(--text-dark);
@@ -213,12 +155,8 @@
     display: inline-block;
 }
 
-.btn-secondary:hover {
-    background-color: #000000;
-    color: #ffffff;
-}
+.btn-secondary:hover { background-color: #000000; color: #ffffff; }
 
-/* --- Pied de page confirmation ------------------------------------------ */
 .confirmation-footer {
     display: flex;
     gap: 16px;
@@ -227,11 +165,9 @@
     padding-top: 12px;
 }
 
-.confirmation-footer .btn-submit-large {
-    padding: 16px 56px;
-}
+.confirmation-footer .btn-submit-large { padding: 16px 56px; }
 
-/* --- Bloc erreur (token invalide) --------------------------------------- */
+/* bloc erreur (token invalide) */
 .error-block {
     background-color: #ffffff;
     border: 2px solid #000000;
@@ -246,7 +182,7 @@
     background: rgba(175, 0, 0, 0.1);
     color: #af0000;
     border-radius: 0;
-    border: 2px solid rgba(175,0,0,0.3);
+    border: 2px solid rgba(175, 0, 0, 0.3);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -258,7 +194,6 @@
 .error-block h2 { margin: 0 0 12px 0; font-size: 24px; }
 .error-block p  { color: #555; margin-bottom: 28px; }
 
-/* --- Bannière d'erreur (formulaire) ------------------------------------- */
 .error-banner {
     background: #fff0f0;
     border: 2px solid #fccbcb;
@@ -270,7 +205,7 @@
     font-weight: 600;
 }
 
-/* --- Bloc créneau actuel (page modifier) -------------------------------- */
+/* créneau actuel (page modifier) */
 .creneau-actuel-block {
     display: flex;
     align-items: center;
@@ -281,37 +216,13 @@
     padding: 20px 24px;
 }
 
-.creneau-actuel-heure {
-    font-size: 28px;
-    font-weight: 900;
-    color: var(--cyan-dark);
-    white-space: nowrap;
-}
+.creneau-actuel-heure { font-size: 28px; font-weight: 900; color: var(--cyan-dark); white-space: nowrap; }
+.creneau-actuel-heure .sep { font-size: 16px; color: #aaa; margin: 0 4px; font-weight: 400; }
 
-.creneau-actuel-heure .sep {
-    font-size: 16px;
-    color: #aaa;
-    margin: 0 4px;
-    font-weight: 400;
-}
+.creneau-actuel-details { display: flex; flex-direction: column; gap: 4px; }
+.creneau-actuel-details strong { font-size: 17px; color: var(--text-dark); }
+.creneau-actuel-details span   { font-size: 14px; color: #666; }
 
-.creneau-actuel-details {
-    display: flex;
-    flex-direction: column;
-    gap: 4px;
-}
-
-.creneau-actuel-details strong {
-    font-size: 17px;
-    color: var(--text-dark);
-}
-
-.creneau-actuel-details span {
-    font-size: 14px;
-    color: #666;
-}
-
-/* --- Tag "actuel" sur les badges --------------------------------------- */
 .badge-actuel-tag {
     display: block;
     margin-top: 4px;
@@ -325,9 +236,6 @@
     padding: 1px 6px;
 }
 
-/* ==========================================================================
-   RESPONSIVE
-   ========================================================================== */
 @media (max-width: 600px) {
     .confirmation-card { padding: 24px 20px; }
     .confirmation-success-banner { padding: 30px 24px; }

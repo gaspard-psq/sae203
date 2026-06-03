@@ -1,6 +1,3 @@
-/* ==========================================================================
-   VARIABLES ET CONFIGURATION GLOBALE
-   ========================================================================== */
 :root {
     --bg-light: #c5f9f2;
     --cyan-medium: #3ce8d7;
@@ -17,9 +14,7 @@ body {
     background-color: #ffffff;
 }
 
-/* ==========================================================================
-   NAVIGATION ET EN-TÊTE
-   ========================================================================== */
+/* navigation */
 header {
     padding: 22px 0;
     position: sticky;
@@ -64,17 +59,10 @@ header nav ul li a::after {
     transition: width 0.2s ease;
 }
 
-header nav ul li a:hover {
-    color: var(--cyan-dark);
-}
+header nav ul li a:hover { color: var(--cyan-dark); }
+header nav ul li a:hover::after { width: 100%; }
 
-header nav ul li a:hover::after {
-    width: 100%;
-}
-
-/* ==========================================================================
-   TYPOGRAPHIE ET COMPOSANTS PARTAGÉS
-   ========================================================================== */
+/* typographie partagée */
 h1, .pixel-title {
     font-family: 'CutePixel', 'Courier New', monospace;
     font-size: 48px;
@@ -116,9 +104,7 @@ h1, .pixel-title {
     border-radius: 2px;
 }
 
-/* ==========================================================================
-   BOUTONS PARTAGÉS
-   ========================================================================== */
+/* boutons partagés */
 .btn-main {
     display: inline-block;
     background-color: #ffffff;
@@ -172,16 +158,13 @@ h1, .pixel-title {
     color: #ffffff;
 }
 
-/* ==========================================================================
-   PIED DE PAGE
-   ========================================================================== */
+/* footer */
 .site-footer {
     background-color: #000000;
     color: #ffffff;
     margin-top: 60px;
 }
 
-/* --- Bande sociale ----------------------------------------------------- */
 .footer-social-band {
     position: relative;
     padding: 64px 24px 52px;
@@ -233,10 +216,7 @@ h1, .pixel-title {
     transition: color 0.2s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
-.footer-icon-link svg {
-    width: 32px;
-    height: 32px;
-}
+.footer-icon-link svg { width: 32px; height: 32px; }
 
 .footer-icon-link:hover {
     color: #ffffff;
@@ -265,7 +245,6 @@ h1, .pixel-title {
     border-color: #ffffff;
 }
 
-/* --- Colonnes ---------------------------------------------------------- */
 .footer-cols-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -309,11 +288,8 @@ h1, .pixel-title {
     transition: color 0.2s ease;
 }
 
-.footer-col-links li a:hover {
-    color: #ffffff;
-}
+.footer-col-links li a:hover { color: #ffffff; }
 
-/* --- Bas de page ------------------------------------------------------- */
 .footer-bottom {
     padding: 20px 24px;
     display: flex;
@@ -328,10 +304,10 @@ h1, .pixel-title {
 .footer-sep { opacity: 0.5; }
 
 @media (max-width: 600px) {
-    .footer-cols-section { grid-template-columns: 1fr; }
-    .footer-social-band  { padding: 44px 24px 40px; }
-    .footer-icon-link    { padding: 16px 28px; }
+    .footer-cols-section   { grid-template-columns: 1fr; }
+    .footer-social-band    { padding: 44px 24px 40px; }
+    .footer-icon-link      { padding: 16px 28px; }
     .footer-social-actions { flex-direction: column; align-items: center; }
-    .footer-cta-btn      { padding: 14px 36px; width: 100%; }
-    .footer-bottom       { flex-direction: column; gap: 4px; }
+    .footer-cta-btn        { padding: 14px 36px; width: 100%; }
+    .footer-bottom         { flex-direction: column; gap: 4px; }
 }

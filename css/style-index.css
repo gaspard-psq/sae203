@@ -1,6 +1,4 @@
-/* ==========================================================================
-   PAGE ACCUEIL — HERO
-   ========================================================================== */
+/* hero */
 .hero {
     position: relative;
     background-color: var(--bg-light);
@@ -31,9 +29,7 @@
     color: #1a1a1a;
 }
 
-/* ==========================================================================
-   PAGE ACCUEIL — CHIFFRES CLÉS
-   ========================================================================== */
+/* chiffres clés */
 .chiffres-section {
     background-color: var(--bg-light);
     display: flex;
@@ -70,22 +66,17 @@
 .chiffre-sep {
     width: 1px;
     height: 50px;
-    background-color: rgba(0,187,170,0.3);
+    background-color: rgba(0, 187, 170, 0.3);
 }
 
-/* ==========================================================================
-   PAGE ACCUEIL — CTA FINAL
-   ========================================================================== */
+/* section CTA */
 .cta-section {
     background-color: var(--cyan-dark);
     padding: 70px 20px;
     text-align: center;
 }
 
-.cta-inner {
-    max-width: 550px;
-    margin: 0 auto;
-}
+.cta-inner { max-width: 550px; margin: 0 auto; }
 
 .cta-inner h2 {
     font-size: 32px;
@@ -95,26 +86,16 @@
 }
 
 .cta-inner p {
-    color: rgba(255,255,255,0.85);
+    color: rgba(255, 255, 255, 0.85);
     font-size: 16px;
     margin: 0 0 30px;
     line-height: 1.6;
 }
 
-.cta-section .btn-hero {
-    background-color: #ffffff;
-    color: var(--cyan-dark);
-    border-color: #ffffff;
-}
+.cta-section .btn-hero { background-color: #ffffff; color: var(--cyan-dark); border-color: #ffffff; }
+.cta-section .btn-hero:hover { background-color: transparent; color: #ffffff; }
 
-.cta-section .btn-hero:hover {
-    background-color: transparent;
-    color: #ffffff;
-}
-
-/* ==========================================================================
-   PAGE ACCUEIL — SECTION AFFICHE
-   ========================================================================== */
+/* affiche */
 .affiche-section {
     padding: 80px 20px;
     background-color: #ffffff;
@@ -130,14 +111,8 @@
 }
 
 .affiche-texte { max-width: 520px; }
-
-.affiche-texte .intro-text {
-    margin-bottom: 18px;
-}
-
-.affiche-visuel {
-    flex-shrink: 0;
-}
+.affiche-texte .intro-text { margin-bottom: 18px; }
+.affiche-visuel { flex-shrink: 0; }
 
 .affiche-img {
     display: block;
@@ -149,17 +124,14 @@
 @media (max-width: 600px) {
     .hero-content .pixel-title { font-size: 40px; }
     .chiffre-item { padding: 0 20px; }
-    .chiffre-sep { display: none; }
+    .chiffre-sep  { display: none; }
     .chiffres-section { gap: 30px; }
 }
 
 @media (max-width: 800px) {
-    .affiche-inner {
-        grid-template-columns: 1fr;
-        gap: 36px;
-    }
-    .affiche-img { width: 100%; max-width: 340px; margin: 0 auto; }
+    .affiche-inner { grid-template-columns: 1fr; gap: 36px; }
+    .affiche-img   { width: 100%; max-width: 340px; margin: 0 auto; }
     .affiche-visuel { display: flex; justify-content: center; }
-    .affiche-texte .section-title { text-align: center !important; }
-    .affiche-texte .intro-divider { margin-left: auto !important; margin-right: auto !important; }
+    .affiche-texte .section-title  { text-align: center !important; }
+    .affiche-texte .intro-divider  { margin-left: auto !important; margin-right: auto !important; }
 }
