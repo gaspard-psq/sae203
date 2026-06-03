@@ -1,7 +1,7 @@
 <?php $page_styles = ['style-salle.css', 'style-carousel.css']; include('header.php'); ?>
 
 <section class="intro-section">
-    <h1 class="pixel-title"><span class="red-dot">• </span>Salle 4</h1>
+    <h1 class="pixel-title">Salle 4<span class="red-dot">.</span></h1>
     <p>Pirate ipsum arrgh bounty warp jack. Grog coffer ballast maroon sink ipsum chains hands bilged maroon. Me avast of blow her coast topsail arrgh. Crimp reef boatswain hands tea.</p>
 </section>
 
