@@ -45,7 +45,16 @@ et influence en temps réel le monde 3.</p>
     <div class="work-item">
         <div class="work-img-placeholder">Œuvre 4</div>
         <div class="work-text">
-            <p>Pirate ipsum arrgh bounty warp jack. Grog coffer ballast maroon sink ipsum chains hands bilged maroon. Me avast of blow her coast topsail arrgh. Crimp reef boatswain hands tea.</p>
+            <p>DAHL-E-A est une œuvre interactive prenant la forme d’un jeu de pierre-feuille-ciseaux entre deux joueurs. Les participants jouent 3 manches grâce à des boutons physiques reliés à une carte Arduino.
+Après chaque manche, une image projetée évolue et se détériore progressivement :
+le personnage devient plus triste,
+l’environnement se détruit,
+l’ambiance devient plus sombre.
+À la fin de la partie, un message apparaît :
+« Dans une guerre, il n’existe pas de gagnant. »
+Les joueurs portent également des lunettes 3D vertes ou violettes, l’image projetée étant composée uniquement de ces couleurs, chaque joueur voit une partie différente de la scène.
+Cela symbolise la manière dont chaque camp d’un conflit possède une vision partielle et biaisée de la réalité.
+</p>
         </div>
     </div>
 </div>
