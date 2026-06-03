@@ -227,6 +227,10 @@
     padding-top: 12px;
 }
 
+.confirmation-footer .btn-submit-large {
+    padding: 16px 56px;
+}
+
 /* --- Bloc erreur (token invalide) --------------------------------------- */
 .error-block {
     background-color: #ffffff;

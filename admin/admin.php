@@ -99,9 +99,19 @@ $total_pers  = array_sum(array_column($reservations, 'nb_personnes'));
 $total_buffet = 0;
 foreach ($reservations as $r) { if ($r['buffet']) $total_buffet++; }
 
-$page_styles = ['style-reservation.css', 'style-admin.css'];
-include('../php/header.php');
 ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administration — E-LLUSION</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-reservation.css">
+    <link rel="stylesheet" href="../css/style-admin.css">
+</head>
+<body>
+<main>
 
 <div class="container">
     <section class="intro-section">
@@ -190,4 +200,6 @@ include('../php/header.php');
     </div>
 </div>
 
-<?php include('../php/footer.php'); ?>
+</main>
+</body>
+</html>

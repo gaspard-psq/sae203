@@ -33,9 +33,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-$page_styles = ['style-reservation.css', 'style-admin.css'];
-include('../php/header.php');
 ?>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Espace admin — E-LLUSION</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/style-reservation.css">
+    <link rel="stylesheet" href="../css/style-admin.css">
+</head>
+<body>
+<main>
 
 <div class="container">
     <section class="intro-section">
@@ -67,4 +77,6 @@ include('../php/header.php');
     </div>
 </div>
 
-<?php include('../php/footer.php'); ?>
+</main>
+</body>
+</html>

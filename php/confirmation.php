@@ -111,7 +111,6 @@ include('header.php');
         </div>
 
         <div class="confirmation-footer">
-            <a href="exposition.php" class="btn-secondary">Découvrir l'exposition</a>
             <a href="index.php" class="btn-submit-large">Retour à l'accueil</a>
         </div>
 
