@@ -18,7 +18,7 @@ En bout de course, l'image devient grave : pénibilité du travail, insalubrité
     <div class="work-item">
         <div class="work-img-placeholder">Œuvre 2</div>
         <div class="work-text">
-            <p>Placez-vous devant l'écran : une caméra vous filme en direct, à la manière d'un live TikTok ou Instagram. Des commentaires apparaissent automatiquement, générés selon votre distance à l'écran et vos expressions faciales détectées par reconnaissance d'image.<br><br> Trop proche, trop loin, souriant ou neutre — quoi que vous fassiez, vous serez jugé. En Direct met en scène le jugement social permanent que produisent les réseaux sociaux, et l'illusion d'un « like » qui n'existe que pour mieux nous critiquer.</p>
+            <p>Placez-vous devant l'écran : une caméra vous filme en direct, à la manière d'un live TikTok ou Instagram. Des commentaires apparaissent automatiquement, générés selon votre distance à l'écran et vos expressions faciales détectées par reconnaissance d'image.<br><br> Trop proche, trop loin, souriant ou neutre quoi que vous fassiez, vous serez jugé. En Direct met en scène le jugement social permanent que produisent les réseaux sociaux, et l'illusion d'un « like » qui n'existe que pour mieux nous critiquer.</p>
         </div>
     </div>
     <div class="work-item">
