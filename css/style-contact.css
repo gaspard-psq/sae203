@@ -17,13 +17,11 @@ body {
     gap: 24px;
     max-width: 850px;
     margin: 0 auto 0 auto;
-    align-items: start;
 }
 
-.contact-info {
+.contact-info-block {
     position: sticky;
     top: 84px;
-    align-self: start;
 }
 
 .contact-info-block {
