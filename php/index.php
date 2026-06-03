@@ -45,6 +45,28 @@ Le thème de l'exposition ? E-llusion, venez la découvrir à travers un parcour
     </div>
 </section>
 
+<!-- AFFICHE -->
+<section class="affiche-section">
+    <div class="affiche-inner">
+        <div class="affiche-texte">
+            <h2 class="section-title" style="text-align:left">L'affiche de l'exposition</h2>
+            <div class="intro-divider" style="margin:14px 0 24px"></div>
+            <p class="intro-text">
+                Dans le cadre de nos cours de création numérique, chaque étudiant a été invité à concevoir individuellement une affiche pour promouvoir l'exposition. Parmi la cinquantaine de propositions, une dizaine de projets ont été présélectionnés par les professeurs.
+            </p>
+            <p class="intro-text">
+                À l'issue d'un vote impliquant l'ensemble des étudiants et des professeurs, l'affiche présentée ci-contre a été retenue.
+            </p>
+            <p class="intro-text">
+                C'est à partir de la charte graphique de cette création que nous avons ensuite développé l'identité visuelle et l'interface de ce site web.
+            </p>
+        </div>
+        <div class="affiche-visuel">
+            <img src="../img/affiche.jpg" alt="Affiche de l'exposition E-LLUSION" class="affiche-img">
+        </div>
+    </div>
+</section>
+
 <!-- CAROUSEL SALLES -->
 <?php include('carousel_salles.php'); ?>
 

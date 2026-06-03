@@ -1,3 +1,13 @@
+body {
+    background-image: url('../img/fond_bleu_clair1.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+
 /* ==========================================================================
    PAGE CONTACT — LAYOUT 2 COLONNES
    ========================================================================== */
