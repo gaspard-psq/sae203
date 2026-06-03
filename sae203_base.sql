@@ -1,14 +1,7 @@
--- =========================================================
--- Base de données E-LLUSION
--- À importer dans phpMyAdmin (MMI Agence ou OVH)
--- =========================================================
-
 SET NAMES utf8mb4;
 SET FOREIGN_KEY_CHECKS = 0;
 
--- -----------------------------------------------------------
--- Table `salle`
--- -----------------------------------------------------------
+
 DROP TABLE IF EXISTS `salle`;
 CREATE TABLE `salle` (
   `id_salle`     INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -23,9 +16,6 @@ INSERT INTO `salle` (`nom`, `capacite_max`) VALUES
   ("L'envers du Décor", 12),
   ('La pépinière',      12);
 
--- -----------------------------------------------------------
--- Table `creneau`
--- -----------------------------------------------------------
 DROP TABLE IF EXISTS `creneau`;
 CREATE TABLE `creneau` (
   `id_creneau`       INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -37,8 +27,7 @@ CREATE TABLE `creneau` (
   FOREIGN KEY (`id_salle`) REFERENCES `salle`(`id_salle`) ON DELETE CASCADE
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- Jeudi 18 juin 2026 — 10 créneaux × 4 salles = 40 créneaux
--- Les places_restantes sont initialisées à capacite_max (12)
+
 INSERT INTO `creneau` (`id_salle`, `date`, `heure_debut`, `places_restantes`) VALUES
   -- Salle 1 : Societ-e
   (1, '2026-06-18', '15:00:00', 12),
@@ -85,11 +74,7 @@ INSERT INTO `creneau` (`id_salle`, `date`, `heure_debut`, `places_restantes`) VA
   (4, '2026-06-18', '19:30:00', 12),
   (4, '2026-06-18', '20:00:00', 12);
 
--- -----------------------------------------------------------
--- Table `categorie_visite`
--- IMPORTANT : vérifiez que ces libellés correspondent
--- exactement à ceux de votre BDD OVH !
--- -----------------------------------------------------------
+
 DROP TABLE IF EXISTS `categorie_visite`;
 CREATE TABLE `categorie_visite` (
   `id_categorie` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -103,9 +88,7 @@ INSERT INTO `categorie_visite` (`libelle`) VALUES
   ('Enseignant'),
   ('Professionnel');
 
--- -----------------------------------------------------------
--- Table `inscription`
--- -----------------------------------------------------------
+
 DROP TABLE IF EXISTS `inscription`;
 CREATE TABLE `inscription` (
   `id_inscription` INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -124,10 +107,7 @@ CREATE TABLE `inscription` (
   FOREIGN KEY (`id_categorie`) REFERENCES `categorie_visite`(`id_categorie`) ON DELETE RESTRICT
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
--- -----------------------------------------------------------
--- Table `admin`
--- Le compte se crée via admin/creer-admin.php
--- -----------------------------------------------------------
+
 DROP TABLE IF EXISTS `admin`;
 CREATE TABLE `admin` (
   `id_admin`      INT UNSIGNED NOT NULL AUTO_INCREMENT,
