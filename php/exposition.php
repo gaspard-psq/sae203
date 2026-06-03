@@ -3,7 +3,7 @@
 <div class="container">
     <section class="intro-section">
         <h1 class="pixel-title">Exposition<span class="red-dot">.</span></h1>
-        <p>Pizza ipsum dolor meat lovers buffalo. Tomatoes thin olives white ricotta meat pineapple and Philly. Parmesan personal pork green spinach stuffed pie. Burnt bacon white buffalo spinach.</p>
+        <p>Embarquez dans notre parcours artistique réparti sur 4 salles, chacune avec son propre univers ! <br><br> Chaque salle vous emmène explorer une facette différente de notre réflexion, entre engagement, point de vue et créativité. </p>
     </section>
 
     <section class="salles-grid">

@@ -4,6 +4,8 @@
 
     <!-- BANDE SOCIALE -->
     <div class="footer-social-band">
+        <img src="../img/mmi.png" alt="MMI Chambéry" class="footer-logo footer-logo-left">
+        <img src="../img/iut.png" alt="IUT Chambéry" class="footer-logo footer-logo-right">
         <p class="footer-social-title">Retrouvez-nous</p>
 
         <div class="footer-social-actions">

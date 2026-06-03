@@ -2,7 +2,7 @@
 
 <section class="intro-section">
     <h1 class="pixel-title">Salle 2<span class="red-dot">.</span></h1>
-    <p>Pirate ipsum arrgh bounty warp jack. Grog coffer ballast maroon sink ipsum chains hands bilged maroon. Me avast of blow her coast topsail arrgh. Crimp reef boatswain hands tea.</p>
+    <p>La salle 2 est le fruit du travail d'un groupe de <strong>12 étudiants</strong> qui ont conçu et réalisé leurs œuvres entièrement de A à Z — de l'idée initiale jusqu'à l'installation finale.</p>
 </section>
 
 <div class="works-list">

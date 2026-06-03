@@ -183,10 +183,23 @@ h1, .pixel-title {
 
 /* --- Bande sociale ----------------------------------------------------- */
 .footer-social-band {
+    position: relative;
     padding: 64px 24px 52px;
     text-align: center;
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
+
+.footer-logo {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    filter: brightness(0) invert(1);
+    opacity: 0.75;
+}
+
+.footer-logo-left  { left: 48px; height: 82px; }
+.footer-logo-right { right: 48px; height: 52px; }
 
 .footer-social-title {
     font-size: 13px;
