@@ -19,14 +19,15 @@ include('header.php');
     <div class="intro-divider"></div>
     <p class="intro-text">
         Cette exposition a été imaginée et créée de toutes pièces par des étudiants en première année de BUT MMI (Métiers du multimédia et de l'internet).
-        <br><br>
+    </p>
+    <p class="intro-text">
         Le thème de l'exposition ? E-llusion, venez la découvrir à travers un parcours réparti en 4 salles où vous attendent 12 œuvres originales (3 ou 4 œuvres par salle) qui explorent le numérique et les faux-semblants.
     </p>
     <a href="exposition.php" class="btn-secondary">En savoir plus</a>
 </section>
 
 <!-- CHIFFRES CLÉS -->
-<section class="chiffres-section">
+<div class="chiffres-section">
     <div class="chiffre-item">
         <span class="chiffre-nb">4</span>
         <span class="chiffre-label">Salles</span>
@@ -46,7 +47,7 @@ include('header.php');
         <span class="chiffre-nb">1ère</span>
         <span class="chiffre-label">Année MMI</span>
     </div>
-</section>
+</div>
 
 <!-- AFFICHE -->
 <section class="affiche-section">

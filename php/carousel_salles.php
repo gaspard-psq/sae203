@@ -12,7 +12,7 @@ $salles = [
     <div class="intro-divider"></div>
 
     <div class="carousel-wrapper">
-        <button class="carousel-btn prev" id="prevBtn" aria-label="Précédent">&#8592;</button>
+        <button type="button" class="carousel-btn prev" id="prevBtn" aria-label="Précédent">&#8592;</button>
 
         <div class="carousel-track-container">
             <div class="carousel-track" id="carouselTrack">
@@ -32,12 +32,12 @@ $salles = [
             </div>
         </div>
 
-        <button class="carousel-btn next" id="nextBtn" aria-label="Suivant">&#8594;</button>
+        <button type="button" class="carousel-btn next" id="nextBtn" aria-label="Suivant">&#8594;</button>
     </div>
 
     <div class="carousel-dots" id="carouselDots">
         <?php foreach ($salles as $i => $salle): ?>
-        <span class="dot <?= $i === 0 ? 'active' : '' ?>" data-index="<?= $i ?>"></span>
+        <span class="dot<?= $i === 0 ? ' active' : '' ?>" data-index="<?= $i ?>"></span>
         <?php endforeach; ?>
     </div>
 </section>
