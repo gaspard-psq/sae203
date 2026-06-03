@@ -50,6 +50,7 @@ Après chaque manche, une image projetée évolue et se détériore progressivem
 le personnage devient plus triste,
 l’environnement se détruit,
 l’ambiance devient plus sombre.
+<br><br>
 À la fin de la partie, un message apparaît :
 « Dans une guerre, il n’existe pas de gagnant. »
 Les joueurs portent également des lunettes 3D vertes ou violettes, l’image projetée étant composée uniquement de ces couleurs, chaque joueur voit une partie différente de la scène.
