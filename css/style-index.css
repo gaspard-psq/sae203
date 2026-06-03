@@ -144,7 +144,6 @@
     width: 300px;
     height: auto;
     border: 3px solid #000000;
-    box-shadow: 8px 8px 0 #000000;
 }
 
 @media (max-width: 600px) {
