@@ -4,7 +4,7 @@ $host_actuel = strtolower($_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? ''
 
 if ($host_actuel === 'localhost' || $host_actuel === '127.0.0.1') {
 
-    // ── Environnement local (XAMPP) ──────────────────────────
+    // Environnement local (XAMPP)
     $host     = 'localhost';
     $dbname   = 'sae203';
     $username = 'root';
@@ -12,7 +12,7 @@ if ($host_actuel === 'localhost' || $host_actuel === '127.0.0.1') {
 
 } elseif (strpos($host_actuel, 'mmi-agences.univ-smb.fr') !== false) {
 
-    // ── MMI Agence ───────────────────────────────────────────
+    // MMI Agence 
     $host     = '192.168.135.113';
     $dbname   = 'pasquieg';
     $username = 'user';
@@ -20,7 +20,7 @@ if ($host_actuel === 'localhost' || $host_actuel === '127.0.0.1') {
 
 } else {
 
-    // ── OVH (production par défaut) ──────────────────────────
+    // OVH (production par défaut) 
     $host     = 'ijtebowcompte12.mysql.db';
     $dbname   = 'ijtebowcompte12';
     $username = 'ijtebowcompte12';
