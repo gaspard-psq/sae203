@@ -4,7 +4,7 @@ $host_actuel = strtolower($_SERVER['HTTP_HOST'] ?? $_SERVER['SERVER_NAME'] ?? ''
 
 if ($host_actuel === 'localhost' || $host_actuel === '127.0.0.1') {
 
-    // Environnement local (XAMPP)
+    // local (XAMPP)
     $host     = 'localhost';
     $dbname   = 'sae203';
     $username = 'root';
